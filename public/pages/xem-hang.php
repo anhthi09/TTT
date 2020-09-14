@@ -33,7 +33,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" id="img">
                     <div id="myTabContent1" class="tab-content">
                         <div class="product-tab-list tab-pane fade active in" id="single-tab1">
-                            <img src="/DoAnWeb2020/admin/modules/product/img_product/<?php echo $row['avatar']?>" alt="" />
+                            <img src="/TTT/admin/modules/product/img_product/<?php echo $row['avatar']?>" alt="" />
                         </div>
                         
                     </div>

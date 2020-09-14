@@ -9,7 +9,7 @@
     <footer id="foot">
         <!-- Begin footer -->
         <p>
-            Copyright &copy; 2020 by TTUTT TEAM
+            Copyright &copy; 2020 VENUS FURNITURE
         </p>
         <!-- end footer -->
     </footer>

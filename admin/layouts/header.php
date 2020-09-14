@@ -10,58 +10,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="/DoAnWeb2020/public/admin/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/TTT/public/admin/img/favicon.ico">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/bootstrap.min.css">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/font-awesome.min.css">
     <!-- owl.carousel CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/owl.carousel.css">
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/owl.theme.css">
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/owl.transitions.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/owl.carousel.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/owl.theme.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/owl.transitions.css">
     <!-- animate CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/animate.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/animate.css">
     <!-- normalize CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/normalize.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/normalize.css">
     <!-- meanmenu icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/meanmenu.min.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/meanmenu.min.css">
     <!-- main CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/main.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/main.css">
     <!-- morrisjs CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/morrisjs/morris.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/morrisjs/morris.css">
     <!-- mCustomScrollbar CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- metisMenu CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/metisMenu/metisMenu-vertical.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/metisMenu/metisMenu.min.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/metisMenu/metisMenu-vertical.css">
     <!-- calendar CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/calendar/fullcalendar.print.min.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/calendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/calendar/fullcalendar.print.min.css">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/style.css">
+    <link rel="stylesheet" href="/TTT/public/admin/style.css">
     <!-- responsive CSS
 		============================================ -->
-    <link rel="stylesheet" href="/DoAnWeb2020/public/admin/css/responsive.css">
+    <link rel="stylesheet" href="/TTT/public/admin/css/responsive.css">
     <!-- modernizr JS
 		============================================ -->
-    <script src="/DoAnWeb2020/public/admin/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="/TTT/public/admin/js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- validation -->
-    <script src="/DoAnWeb2020/public/admin/js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/TTT/public/admin/js/vendor/jquery-1.11.3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.js"></script>
 
@@ -75,24 +75,24 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="/DoAnWeb2020/admin/modules"><img class="main-logo" src="/DoAnWeb2020/public/admin/img/logo/logosongphat.png" alt="poto" /></a>
+                <a href="/DoAnWeb2020/admin/modules"><img class="main-logo" src="/TTT/public/admin/img/logo/logosongphat.png" alt="poto" /></a>
                 <strong><img src="#" alt="" /></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a class="has-arrow" href="/DoAnWeb2020/admin/modules">
+                            <a class="has-arrow" href="/TTT/admin/modules">
                                 <i class="fa big-icon fa-home icon-wrap"></i>
                                 <span class="mini-click-non">Trang Chủ</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="/DoAnWeb2020/admin/modules/admins"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản Lý Admin</span></a></li>
-                                <li><a title="Dashboard v.2" href="/DoAnWeb2020/admin/modules/category"><i class="fa fa-circle-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản Lý Danh Mục</span></a></li>
-                                <li><a title="Dashboard v.4" href="/DoAnWeb2020/admin/modules/type"><i class="fa fa-circle-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản lý Loại Sản Phẩm</span></a></li>
-                                <li><a title="Dashboard v.3" href="/DoAnWeb2020/admin/modules/product"><i class="fa fa-cube sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản Lý Sản Phẩm</span></a></li>
-                                <li><a title="Dashboard v.1" href="/DoAnWeb2020/admin/modules/transaction"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản Lý Đơn Hàng</span></a></li>
-                                <li><a title="Product List" href="/DoAnWeb2020/admin/modules/users"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản Lý Người Dùng</span></a></li>
+                                <li><a title="Dashboard v.1" href="/TTT/admin/modules/admins"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản Lý Admin</span></a></li>
+                                <li><a title="Dashboard v.2" href="/TTT/admin/modules/category"><i class="fa fa-circle-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản Lý Danh Mục</span></a></li>
+                                <li><a title="Dashboard v.4" href="/TTT/admin/modules/type"><i class="fa fa-circle-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản lý Loại Sản Phẩm</span></a></li>
+                                <li><a title="Dashboard v.3" href="/TTT/admin/modules/product"><i class="fa fa-cube sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản Lý Sản Phẩm</span></a></li>
+                                <li><a title="Dashboard v.1" href="/TTT/admin/modules/transaction"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản Lý Đơn Hàng</span></a></li>
+                                <li><a title="Product List" href="/TTT/admin/modules/users"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Quản Lý Người Dùng</span></a></li>
 
                             </ul>
                         </li>
@@ -110,7 +110,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="/DoAnWeb2020/public/admin/img/logo/logosongphat.png" alt="" /></a>
+                        <a href="index.html"><img class="main-logo" src="/TTT/public/admin/img/logo/logosongphat.png" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -233,15 +233,15 @@
                                                             <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
                                                         </a>
                                                         <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                            <li><a href="/DoAnWeb2020/public/index.php"><span class="fa fa-home author-log-ic"></span>Quay về trang mua sắm</a>
+                                                            <li><a href="/TTT/public/index.php"><span class="fa fa-home author-log-ic"></span>Quay về trang mua sắm</a>
                                                             </li>
 
-                                                            <li><a href="/DoAnWeb2020/admin/modules/admins/thoat.php"><span class="fa fa-lock author-log-ic"></span>Đăng Xuất</a>
+                                                            <li><a href="/TTT/admin/modules/admins/thoat.php"><span class="fa fa-lock author-log-ic"></span>Đăng Xuất</a>
                                                             </li>
                                                         </ul>
                                                 </li>
                                             <?php else : ?>
-                                                <a href="/DoAnWeb2020/admin/modules/admins/login.php" role="button" aria-expanded="false" class="nav-link ">
+                                                <a href="/TTT/admin/modules/admins/login.php" role="button" aria-expanded="false" class="nav-link ">
                                                     <i class="fa fa-user adminpro-user-rounded header-riht-inf" aria-hidden="true"></i>
                                                     <span class="admin-name"> </span>
                                                     <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>

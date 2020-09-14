@@ -32,7 +32,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         <!-- Begin head  -->
         <nav>
 
-            <a href="#Home"><img class="logo" src="./resources/img/logoCong_ty_Co_Phan_Kien_Truc_Xay_Dung_song_phat.jpg.png" alt="logo"></a>
+            <a href="#Home"><img class="logo" src="./resources/img/hinh/logo2.png" alt="logo"></a>
             <div>
                 <ul class="main-nav">
                     <?php
@@ -41,7 +41,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
                     while ($loai = mysqli_fetch_array($category)) {
 
                         $chuoi = <<< EOD
-                          <li><a class="a" href="/DoAnWeb2020/public/pages/show-row.php?id={$loai['id']}">  {$loai['name']}</a>
+                          <li><a class="a" href="/TTT/public/pages/show-row.php?id={$loai['id']}">  {$loai['name']}</a>
                           <ul class="submenu">
                           EOD;
                         echo $chuoi;
@@ -52,7 +52,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
                         while ($type1 = mysqli_fetch_array($type)) {
                             $chuoi1 = <<< EOD
                       
-                            <li><a href="/DoAnWeb2020/public/pages/show-row.php?id={$type1['id']}"> {$type1['name']}</a></li>                                                                                  
+                            <li><a href="/TTT/public/pages/show-row.php?id={$type1['id']}"> {$type1['name']}</a></li>                                                                                  
                      EOD;
                             echo $chuoi1;
                         }
@@ -73,7 +73,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
                                 <a class="dropdown-item" href="pages/ho-so.php">Hồ sơ</a>
                                
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/DoAnWeb2020/public/pages/thoat.php">Đăng xuất</a>
+                                <a class="dropdown-item" href="/TTT/public/pages/thoat.php">Đăng xuất</a>
                             </div>
                         </div>
                     <?php else : ?>
@@ -90,10 +90,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         <div class="clearfix"> </div>
         <div class="ROW">
             <div class="heading-main-box">
-                <h>
-                    tiện nghi, sang trọng, <br>
-                    đẳng cấp và tinh tế
-                </h>
+                
             </div>
         </div>
         <!-- end head -->
@@ -102,26 +99,18 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
     <section class="About-section row ">
         <!-- Bắt đầu phần giới thiệu sản phẩm mới -->
         <div class="bosuutap col span_1_of_2">
-            <p class="tieude">2020 Collection<br></p>
+            <p class="tieude">Venus Furniture<br></p>
             <p class="gioithieu">
-                Bộ sưu tập các sản phẩm ngoài trời lớn nhất Việt Nam.-
-                Được sản xuất với công nghệ và chất lượng tốt nhất, phù hợp sử dụng trong mọi điều kiện thời tiết;
-                từ ban công có mái che, khu vườn vùng nhiệt đới, khu vực Bắc Âu lạnh giá khắc nghiệt
-                cho tới những vùng biển Địa Trung Hải nắng nóng,
-                các sản phẩm ngoài trời của chúng tôi đều thích hợp sử dụng
+            Việc ra đời của Venus Furniture là cả quá trình đúc kết, tìm hiểu về đặc thù của từng loại không gian và các xu hướng sở thích khác nhau từ người sử dụng. 
+            Những nghiên cứu kỹ lưỡng đó được kết hợp khéo léo cùng tài năng của các nhà thiết kế nổi tiếng Châu Âu, tạo nên dòng sản phẩm trang trí, đồ nội thất đẹp có độ ứng dụng cao với nhiều loại hình không gian khác nhau. 
+            Gần gũi và ấm cúng cho nhà ở; cởi mở và thời trang cho khách sạn; chuyên nghiệp, năng động khi sử dụng cho văn phòng... 
+            phong thái từ các thiết kế của Venus Furniture luôn tạo được sức hút bởi tính đa chiều trong cảm xúc mà chúng mang lại cho không gian.
             </p>
         </div>
 
 
-        <div id="slider" class="gioithieuimg col span-1_of_2 popup-gallery">
-            <a href="./resources/img/hình trang chủ/ghế 2.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hình trang chủ/ghế 2.webp" alt="photo" stt="1" style="display:none"></a>
-            <a href="./resources/img/hình trang chủ/ghế 1.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hình trang chủ/ghế 1.webp" alt="photo" stt="0"></a>
-            <a href="./resources/img/hình trang chủ/ghế 3.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hình trang chủ/ghế 3.webp" alt="photo" stt="2" style="display:none"></a>
-            <a href="./resources/img/hình trang chủ/ghế 4.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hình trang chủ/ghế 4.webp" alt="photo" stt="3" style="display:none"></a>
-            <a href="./resources/img/hình trang chủ/ghế 5.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hình trang chủ/ghế 5.webp" alt="photo" stt="4" style="display:none"></a>
-            <a href="./resources/img/hình trang chủ/ghế 6.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hình trang chủ/ghế 6.webp" alt="photo" stt="5" style="display:none"></a>
-            <a href="./resources/img/hình trang chủ/ghế 7.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hình trang chủ/ghế 7.webp" alt="photo" stt="6" style="display:none"></a>
-            <a href="./resources/img/hình trang chủ/ghế 8.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hình trang chủ/ghế 8.webp" alt="photo" stt="7" style="display:none"></a>
+        <div id="#" class="gioithieuimg col span-1_of_2 popup-gallery">
+            <a href="./resources/img/hinh/banghe.jpeg" title="sản phẩm mới nhất của bộ sưu tập"><img class="#" src="./resources/img/hinh/banghe.jpeg" alt="photo"></a>
         </div>
         <!-- kết thúc phần giới thiệu sản phẩm mới -->
     </section>
@@ -174,19 +163,16 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         </div>
 
         <div class="noidung col md-6 ">
-            <p class="tieude2">Made in Viet Nam ...<br></p>
+            <p class="tieude2">Không Gian Sống...<br></p>
             <p class="modau">Tất cả những gì cần cho ngôi nhà của bạn</p>
             <p class="gioithieu2 ">
-                Là một trong 4 nước xuất khẩu lớn nhất Thế giới về Nội thất, Ngoại thất và Home decor, Việt Nam có khả
-                năng sản xuất số lượng lớn sản phẩm Nội Ngoại thất với độ phức tạp cũng như yêu cầu khắt khe nhất và có
-                thể đáp ứng được nhu cầu của bất cứ thị trường nào trên Thế giới ...<br><br>
-                ​Với mô hình phân phối hàng trực tiếp từ Nhà máy tới người dùng cuối thông qua nền tảng bán hàng Online
-                và chỉ phân phối các sản phẩm của các Thương hiệu uy tín; chúng tôi không ngừng tìm kiếm các nguồn hàng
-                sản xuất tại Việt Nam với chất lượng tốt nhất để mang tới cho người tiêu dùng.<br><br>
-                Đặt hàng trực tiếp với Nhà máy khi có đơn hàng, không đầu tư Showroom lớn, không trữ hàng như hình thức
-                bán hàng showroom truyền thống, vì vậy mỗi sản phẩm tới tay người tiêu dùng đều là những sản phẩm còn
-                nguyên đai nguyên kiện và đã loại bỏ được rất nhiều chi phí trung gian, giúp người tiêu dùng tiếp cận
-                được với những sản phẩm chất lượng của các Thương hiệu lớn trên thế giới với giá cả hợp lý nhất
+            Đất nước Đan Mạch ghi dấu trong mọi lĩnh vực từ nghệ thuật, kiến trúc, khoa học công nghệ, bề dày lịch sử cho đến phúc lợi xã hội. 
+            Những thành tựu đó đã tạo nên nền tảng vững chắc để đảm bảo cho nhịp sống thanh bình, biết trân trọng các giá trị chân thực và luôn sáng tạo để mang đến những điều tốt đẹp cho cuộc sống. 
+            Đặc biệt hơn nữa, yếu tố tinh thần này luôn thể hiện rõ nét trong từng góc sống, từng tổ ấm của người dân nơi đây.
+            <br>Với tình yêu đặc biệt dành cho nội thất, đến với Venus Furniture là đến với một tinh thần Đan Mạch chân thực, đồng thời trải nghiệm về các không gian sống mang đậm chất Bắc Âu phóng khoáng mà đơn giản, tối giản mà hữu dụng.
+            Hãy để chúng tôi đồng hành cùng bạn tạo nên một không gian sống chứa đựng những ký ức tuyệt vời nhất.
+            <br> Venus Furniture luôn sẵn sàng mang đến những sản phẩm đồ nội thất đẹp giúp bạn tạo ra những không gian sống tiện nghi, 
+            thoải mái và giúp bạn thực sự thư giãn mỗi khi quay trở về nhà
             </p>
         </div>
         <!-- Kết thúc giới thiệu thương hiệu -->
@@ -209,8 +195,8 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
 
                     Quận 2, TP. HCM</li>
 
-                <li><i class="fas fa-envelope small-icon"> </i> Email: info@hoouzy.com</li>
-                <li><i class="fas fa-phone small-icon"> </i> Tel: 0888.05.8338 / 0989.881882</li>
+                <li><i class="fas fa-envelope small-icon"> </i> Email: info@venusfurniture.com</li>
+                <li><i class="fas fa-phone small-icon"> </i> Tel: 0388.05.4795 / 0989.881171</li>
             </ul>
             <ul class="social-icons">
 
@@ -228,9 +214,61 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
 
     <footer>
         <!-- Begin footer -->
-        <p>
-            Copyright &copy; 2020 by TTUTT TEAM
-        </p>
+        <div class="splitter"></div>
+        <ul>
+            <!-- three footer columns are here -->
+            <li>
+        
+        <div class="text">
+            <h4>LIÊN HỆ VỚI CHÚNG TÔI</h4>
+            <div>1.Đặt hàng trực tuyến (8h-21h)
+                   <br>  1900 63 64 76 (Phím 1)
+                    <br> <a href="/TTT/public/index.php">webshop@venus.vn</a>
+                    <br>2. CSKH (8h-17h)
+                    <br> 1900 63 64 76 (Phím 2)
+                    <br> <a href="#">cskh@venus.vn</a>
+ 
+        </div>
+    </li>
+    <li>
+        
+        <div class="text">
+            <h4>KHUYẾN MÃI</h4>
+            <div>
+                 <a href="#">Sản Phẩm Khuyến Mãi</a><br><br>
+                 <a href="#">Tin Tức Khuyến Mãi</a><br>
+                </div>
+        </div>
+    </li>
+    <li>
+        
+        <div class="text">
+            <h4>DỊCH VỤ KHÁCH HÀNG</h4>
+            <div>
+                 <a href="#">CLB Khách Hàng Thân Thiết</a><br>
+                 <a href="#">Thanh Toán</a><br>
+                 <a href="#">Đổi Hàng</a><br>
+                 <a href="#">Vận Chuyển Và Lắp Đặt</a><br>
+                 <a href="#">Bảo Hành Và Bảo Trì</a><br>
+                 <a href="#">Bảo Mật Thông Tin</a><br>
+            </div>
+        </div>
+    </li>
+        </ul>
+ 
+        <div class="bar">
+            <div class="bar-wrap">
+                <ul class="links"> <!-- footer menu -->
+                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="#">Dịch Vụ Khách Hàng</a></li>
+                    <li><a href="#">Chính Sách</a></li>
+                    <li><a href="#">Tuyển Dụng</a></li>
+                    <li><a href="#">Hỏi Đáp</a></li>
+                </ul>
+                
+                <div class="copyright">&copy;  2020 VENUS FURNITURE</div>
+            </div>
+        </div>
         <!-- end footer -->
     </footer>
 

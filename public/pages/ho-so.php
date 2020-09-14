@@ -54,7 +54,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Ảnh Đại Diện</label>
                             <input type="file" class="form-control-file" id="exampleFormControlFile1" name="Hinh" >
-                            <img src="/DoAnWeb2020/admin/modules/users/img_users/<?php echo $row['avatar'] ?>" >
+                            <img src="/TTT/admin/modules/users/img_users/<?php echo $row['avatar'] ?>" >
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>

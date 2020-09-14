@@ -84,7 +84,7 @@ require_once __DIR__ . "/../autoload/autoload.php";
     <div class="sticky">
         <nav>
             <a href="../index.php"><img class="logo"
-                    src="../resources/img/logoCong_ty_Co_Phan_Kien_Truc_Xay_Dung_song_phat.jpg.png" alt="logo"></a>
+                    src="../resources/img/hinh/logo2.png" alt="logo"></a>
             <div>
             <ul class="main-nav">
               <li>
@@ -132,7 +132,7 @@ require_once __DIR__ . "/../autoload/autoload.php";
                     while ($loai = mysqli_fetch_array($category)) {
 
                         $chuoi = <<< EOD
-                          <li><a class="a" href="/DoAnWeb2020/public/pages/show-row.php?id={$loai['id']}">  {$loai['name']}</a>
+                          <li><a class="a" href="/TTT/public/pages/show-row.php?id={$loai['id']}">  {$loai['name']}</a>
                           <ul class="submenu">
                           EOD;
                         echo $chuoi;
@@ -143,7 +143,7 @@ require_once __DIR__ . "/../autoload/autoload.php";
                         while ($type1 = mysqli_fetch_array($type)) {
                             $chuoi1 = <<< EOD
                       
-                            <li><a href="/DoAnWeb2020/public/pages/show-row.php?id={$type1['id']}"> {$type1['name']}</a></li>                                                                                  
+                            <li><a href="/TTT/public/pages/show-row.php?id={$type1['id']}"> {$type1['name']}</a></li>                                                                                  
                      EOD;
                             echo $chuoi1;
                         }
@@ -163,7 +163,7 @@ require_once __DIR__ . "/../autoload/autoload.php";
                                 <a class="dropdown-item" href="#"></a>
                                 <a class="dropdown-item" href="ho-so.php">Hồ sơ</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/DoAnWeb2020/public/pages/thoat.php">Đăng xuất</a>
+                                <a class="dropdown-item" href="/TTT/public/pages/thoat.php">Đăng xuất</a>
                             </div>
                         </div>
                     <?php else : ?>

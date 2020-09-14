@@ -55,7 +55,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                   $chuoi = <<< EOD
                                   <div class="khung_san_pham col-4">
                                   <div class="Hinh_anhsp">
-                                      <a href=" xem-hang.php?id= {$row['id']}"><img src="/DoAnWeb2020/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
+                                      <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
                                   </div>
                                   <div class="ten_sp">
                                       <p> {$row['name']}</p>
@@ -74,7 +74,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                   $chuoi = <<< EOD
                                   <div class="khung_san_pham col-4">
                                   <div class="Hinh_anhsp">
-                                      <a href=" xem-hang.php?id= {$row['id']}"><img src="/DoAnWeb2020/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
+                                      <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
                                   </div>
                                   <div class="ten_sp">
                                       <p> {$row['name']}</p>
@@ -117,7 +117,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                     $chuoi = <<< EOD
                                     <div class="khung_san_pham col-4">
                                     <div class="Hinh_anhsp">
-                                        <a href=" xem-hang.php?id= {$row['id']}"><img src="/DoAnWeb2020/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
+                                        <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
                                     </div>
                                     <div class="ten_sp">
                                         <p> {$row['name']}</p>
@@ -136,7 +136,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                     $chuoi = <<< EOD
                                     <div class="khung_san_pham col-4">
                                     <div class="Hinh_anhsp">
-                                        <a href=" xem-hang.php?id= {$row['id']}"><img src="/DoAnWeb2020/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
+                                        <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
                                     </div>
                                     <div class="ten_sp">
                                         <p> {$row['name']}</p>
