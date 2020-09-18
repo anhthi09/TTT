@@ -40,7 +40,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" id="addcart">
                     <div class="single-product-details res-pro-tb">
-                        <h1 id="h1"><?php echo $row['tensanpham'] ?></h1>
+                        <h1 id="h1"><?php echo $row['name'] ?></h1>
                         <div class="single-pro-price">
                             <span class="single-regular" id="giatien"><?php echo number_format( $row['gia'],0) ?> VNĐ</span>
                         </div>

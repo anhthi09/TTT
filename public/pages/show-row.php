@@ -58,7 +58,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                       <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
                                   </div>
                                   <div class="ten_sp">
-                                      <p> {$row['tensanpham']}</p>
+                                      <p> {$row['name']}</p>
                                   </div>
                                   <div class="gia_sp">
                                   <p>   $giagoc VNĐ </p>
@@ -101,7 +101,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                         <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
                                     </div>
                                     <div class="ten_sp">
-                                        <p> {$row['tensanpham']}</p>
+                                        <p> {$row['name']}</p>
                                     </div>
                                     <div class="gia_sp">
                                     <p>   $giagoc VNĐ </p>

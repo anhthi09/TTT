@@ -97,7 +97,8 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
     </header>
     <section class="About-section row ">
         <!-- Bắt đầu phần giới thiệu sản phẩm mới -->
-        <div class="bosuutap col span_1_of_2">
+        <div class="bosuutap col span_1_of_2 ">
+           
             <p class="tieude">Venus Furniture<br></p>
             <p class="gioithieu">
             Việc ra đời của Venus Furniture là cả quá trình đúc kết, tìm hiểu về đặc thù của từng loại không gian và các xu hướng sở thích khác nhau từ người sử dụng. 
@@ -105,6 +106,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
             Gần gũi và ấm cúng cho nhà ở; cởi mở và thời trang cho khách sạn; chuyên nghiệp, năng động khi sử dụng cho văn phòng... 
             phong thái từ các thiết kế của Venus Furniture luôn tạo được sức hút bởi tính đa chiều trong cảm xúc mà chúng mang lại cho không gian.
             </p>
+           
         </div>
 
 
