@@ -5,7 +5,7 @@
 $sotin1trang = 10; 
 if( !isset ($_SESSION['namead']) ){
    echo "<script> alert ('Bạn phải là admin để sử dụng chức năng này. Hãy đăng nhập để tiếp tục nhé'); 
-   location.href='/DoAnWeb2020/admin/modules/'</script> ";}
+   location.href='/TTT/admin/modules/'</script> ";}
 if( isset($_GET["trang"]) ){
 	$trang = $_GET["trang"];
 	settype($trang, "int");

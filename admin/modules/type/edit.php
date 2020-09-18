@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/../../autoload/autoload.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   header('location: /DoAnWeb2020/admin/modules/type');
+   header('location: /TTT/admin/modules/type');
 }
 ?>
 <?php require_once __DIR__ . "/../../layouts/header.php" ?>

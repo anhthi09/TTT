@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Product List | jeweler - Material Admin Template</title>
+    <title> Quản Lý Bán Hàng | Venus Furniture</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -75,7 +75,7 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="/DoAnWeb2020/admin/modules"><img class="main-logo" src="/TTT/public/admin/img/logo/logosongphat.png" alt="poto" /></a>
+                <a href="/TTT/admin/modules"><img class="main-logo" src="/TTT/public/admin/img/logo/logosongphat.png" alt="poto" /></a>
                 <strong><img src="#" alt="" /></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -156,7 +156,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="/DoAnWeb2020/public/admin/img/contact/1.jpg" alt="">
+                                                                        <img src="/TTT/public/admin/img/contact/1.jpg" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -168,7 +168,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="/DoAnWeb2020/public/admin/img/contact/4.jpg" alt="">
+                                                                        <img src="/TTT/public/admin/img/contact/4.jpg" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -268,12 +268,12 @@
                                     <ul class="mobile-menu-nav">
                                         <li><a data-toggle="collapse" data-target="#Charts" href="#">Trang Chủ <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul class="collapse dropdown-header-top">
-                                                <li><a href="/DoAnWeb2020/admin/modules/admins">Quản Lý Admin</a></li>
-                                                <li><a href="/DoAnWeb2020/admin/modules/category">Quản Lý Danh Mục</a></li>
-                                                <li><a href="/DoAnWeb2020/admin/modules/type">Quản Lý Loại Sản Phẩm</a></li>
-                                                <li><a href="/DoAnWeb2020/admin/modules/product">Quản Lý Sản Phẩm</a></li>
-                                                <li><a href="/DoAnWeb2020/admin/modules/transaction">Quản Lý Đơn Hàng</a></li>
-                                                <li><a href="/DoAnWeb2020/admin/modules/users">Quản Lý Người Dùng</a></li>
+                                                <li><a href="/TTT/admin/modules/admins">Quản Lý Admin</a></li>
+                                                <li><a href="/TTT/admin/modules/category">Quản Lý Danh Mục</a></li>
+                                                <li><a href="/TTT/admin/modules/type">Quản Lý Loại Sản Phẩm</a></li>
+                                                <li><a href="/TTT/admin/modules/product">Quản Lý Sản Phẩm</a></li>
+                                                <li><a href="/TTT/admin/modules/transaction">Quản Lý Đơn Hàng</a></li>
+                                                <li><a href="/TTT/admin/modules/users">Quản Lý Người Dùng</a></li>
 
                                             </ul>
                                         </li>

@@ -84,7 +84,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
             <tfoot>
                 
                 <tr>
-                    <td><a href="/DoAnWeb2020/public/index.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                    <td><a href="/TTT/public/index.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
                     </td>
                     <td colspan="2" class="hidden-xs"> </td>
                     <td class="hidden-xs text-center"><strong></strong>

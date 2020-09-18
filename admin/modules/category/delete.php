@@ -4,7 +4,7 @@ if (isset  ($_GET['id'])){
     $id=$_GET['id'];
     $sql="DELETE  FROM `category` WHERE id='$id'";
     $result = DataProvider::ExecuteQuery($sql);
-    header('location: /DoAnWeb2020/admin/modules/category');
+    header('location: /TTT/admin/modules/category');
 }
 else{
     echo"không bắt được id";

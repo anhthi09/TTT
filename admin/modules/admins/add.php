@@ -88,8 +88,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if(@$_FILES['Hinhdd']['error'] == 0){
     if(move_uploaded_file(@$_FILES['Hinhdd']["tmp_name"], "img_admins/".@$_FILES['Hinhdd']["name"]))
         {
-            $sql = "INSERT INTO `admins` (`id`, `name`, `address`, `email`, `account`,`password`, `phone`, `status`, `level`, `avatar`, `created_at`, `updata_up`) 
-            VALUES (NULL, '{$_REQUEST['TenAD']}', '{$_REQUEST['address']}','{$_REQUEST['email']}', '{$_REQUEST['account']}','{$_REQUEST['pass']}', '{$_REQUEST['phone']}', '1','1','{$_FILES['Hinhdd']['name']}', current_timestamp() , current_timestamp())";
+            $sql = "INSERT INTO `admins` (`id`, `name`, `address`, `email`,`password`, `phone`, `avatar`, `created_at`, `updata_up`) 
+            VALUES (NULL, '{$_REQUEST['TenAD']}', '{$_REQUEST['address']}','{$_REQUEST['email']}', '{$_REQUEST['pass']}', '{$_REQUEST['phone']}', '1','1','{$_FILES['Hinhdd']['name']}', current_timestamp() , current_timestamp())";
         
             DataProvider::ExecuteQuery($sql);
 		}

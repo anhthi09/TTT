@@ -33,7 +33,7 @@ if( !isset ($_SESSION['cart']) ){
                      <tr>
                     <td data-th="Product">
                         <div class="row">
-                            <div class="col-sm-2 hidden-xs"><img src="/DoAnWeb2020/admin/modules/product/img_product/<?php echo $value['avatar']?>" alt="Sản phẩm 1" class="img-responsive" width="100">
+                            <div class="col-sm-2 hidden-xs"><img src="/TTT/admin/modules/product/img_product/<?php echo $value['avatar']?>" alt="Sản phẩm 1" class="img-responsive" width="100">
                             </div>
                             <div class="col-sm-10">
                                 <h4 class="nomargin"><?php echo $value['name'] ?></h4>
