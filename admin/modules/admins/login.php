@@ -5,7 +5,7 @@
 
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
-    //   header('location: http://localhost:8080/DoAnWeb2020/public');
+    //   header('location: http://localhost:8080/TTT/public');
     $sql=  "SELECT * FROM `admins` WHERE `email` LIKE  '{$_POST['email']}' AND `password` LIKE '{$_POST['password']}' "; 
     $result = DataProvider::ExecuteQuery($sql);
     $row = mysqli_fetch_array($result);

@@ -16,26 +16,26 @@ require_once __DIR__ . "/../../autoload/autoload.php";
             </li>
             <li>
                 <label>
-                    <input type="radio" class="sort" id="a-z" data-oder="ASC"name="sortgia"></input>
+                    <input type="radio" class="sort" id="a-z" data-oder="ASC" name="sortgia"></input>
                     Từ thấp đến cao
                 </label>
             </li>
-            
+
         </ul>
         <ul class="content_left_nav"> Sắp Xếp Theo Tên
             <li>
                 <label>
-                    <input type="radio" class="sort" id="A-Z" data-oder="ASC" name="sortten" ></input>
+                    <input type="radio" class="sort" id="A-Z" data-oder="ASC" name="sortten"></input>
                     A-Z
                 </label>
             </li>
             <li>
                 <label>
-                    <input type="radio" class="sort" id="Z-A" data-oder="DESC"name="sortten"></input>
+                    <input type="radio" class="sort" id="Z-A" data-oder="DESC" name="sortten"></input>
                     Z-A
                 </label>
             </li>
-            
+
         </ul>
 
     </div>
@@ -50,7 +50,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
             while ($row = mysqli_fetch_array($type11)  ) {
              
                 $giagoc=number_format($row['gia'],0);
-                  if ($row['sale'] <= 0){
+                
                                    
                   $chuoi = <<< EOD
                                   <div class="khung_san_pham col-4">
@@ -58,7 +58,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                       <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
                                   </div>
                                   <div class="ten_sp">
-                                      <p> {$row['name']}</p>
+                                      <p> {$row['tensanpham']}</p>
                                   </div>
                                   <div class="gia_sp">
                                   <p>   $giagoc VNĐ </p>
@@ -66,27 +66,8 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                   </div>
                               EOD;
                   echo $chuoi;
-                }
-              else {
-                  
-                  $gia= number_format($row['gia']-$row['gia']*$row['sale']/100,0);
-                 
-                  $chuoi = <<< EOD
-                                  <div class="khung_san_pham col-4">
-                                  <div class="Hinh_anhsp">
-                                      <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
-                                  </div>
-                                  <div class="ten_sp">
-                                      <p> {$row['name']}</p>
-                                  </div>
-                                  <div class="gia_sp">
-                                  <strike>  $giagoc VNĐ </strike>
-                                  <p>  $gia  VNĐ</p>
-                                  </div>
-                                  </div>
-                              EOD;
-                  echo $chuoi;
-              }    
+                
+             
             }
 
 
@@ -112,7 +93,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
              
                 while ($row = mysqli_fetch_array($result)) {
                   $giagoc=number_format($row['gia'],0);
-                    if ($row['sale'] <= 0){
+           
                                      
                     $chuoi = <<< EOD
                                     <div class="khung_san_pham col-4">
@@ -120,7 +101,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                         <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
                                     </div>
                                     <div class="ten_sp">
-                                        <p> {$row['name']}</p>
+                                        <p> {$row['tensanpham']}</p>
                                     </div>
                                     <div class="gia_sp">
                                     <p>   $giagoc VNĐ </p>
@@ -128,27 +109,6 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                     </div>
                                 EOD;
                     echo $chuoi;
-                }
-                else {
-                    
-                    $gia= number_format($row['gia']-$row['gia']*$row['sale']/100,0);
-                   
-                    $chuoi = <<< EOD
-                                    <div class="khung_san_pham col-4">
-                                    <div class="Hinh_anhsp">
-                                        <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
-                                    </div>
-                                    <div class="ten_sp">
-                                        <p> {$row['name']}</p>
-                                    </div>
-                                    <div class="gia_sp">
-                                    <strike>  $giagoc VNĐ </strike>
-                                    <p>  $gia  VNĐ</p>
-                                    </div>
-                                    </div>
-                                EOD;
-                    echo $chuoi;
-                }
             
                 
             }
@@ -165,11 +125,12 @@ require_once __DIR__ . "/../../autoload/autoload.php";
 
 
     </div>
-    <div class="clearfix"></div>
 
 
 
- <!-- <script>  
+
+
+    <!-- <script>  
  $(document).ready(function(){ 
     $(document).on('click','.sort', function(){
          var column_name =$(this).attr("id");   
@@ -192,12 +153,11 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                    
                 }  
            })  
-
-
         })
-
     });
 </script> -->
 
+    <div class="clearfix"></div>
 </element>
+
 <?php require_once __DIR__ . "/../../layouts/footer.php" ?>

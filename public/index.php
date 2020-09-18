@@ -95,7 +95,6 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         </div>
         <!-- end head -->
     </header>
-
     <section class="About-section row ">
         <!-- Bắt đầu phần giới thiệu sản phẩm mới -->
         <div class="bosuutap col span_1_of_2">
@@ -115,91 +114,25 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         <!-- kết thúc phần giới thiệu sản phẩm mới -->
     </section>
 
-    <section class="lists-1 sec-b sec-3 group-ef lazy-hidden">
-    <div class="container">
-        <div class="row grid-space-20">
-                            <div class="col-sm-6 col-md-6 col-lg-3  efch-1 ef-img-t">
-                    <a href="/categories/sofa" class="item">
-                        <div class="img  tRes_150">
-                            <img class="lazy-hidden" data-lazy-type="image" src="./resources/img/hinh/Sofa.jpeg"
-                        
-								alt="SOFA" />
-
-                            <div class="divtext ">
-                                <h3 class="title">SOFA</h3>
-                                <div class="more">
-                                    <span class="readmore">Xem thêm
-                                        <i class="icon-arrow-14"></i>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <h3 class="title2"><span>SOFA</span></h3>
-                        </div>
-                    </a>
-                </div>
-                            <div class="col-sm-6 col-md-6 col-lg-3  efch-2 ef-img-t">
-                    <a href="/categories/ghe" class="item">
-                        <div class="img  tRes_150">
-                            <img class="lazy-hidden" data-lazy-type="image" src="./resources/img/hinh/Ghế.jpeg"
-                               
-								alt="GHẾ" />
-
-                            <div class="divtext ">
-                                <h3 class="title">GHẾ</h3>
-                                <div class="more">
-                                    <span class="readmore">Xem thêm
-                                        <i class="icon-arrow-14"></i>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <h3 class="title2"><span>GHẾ</span></h3>
-                        </div>
-                    </a>
-                </div>
-                            <div class="col-sm-6 col-md-6 col-lg-3  efch-3 ef-img-t">
-                    <a href="/categories/ban" class="item">
-                        <div class="img  tRes_150">
-                            <img class="lazy-hidden" data-lazy-type="image" src="./resources/img/hinh/Bàn.jpeg"
-                              
-								alt="BÀN" />
-
-                            <div class="divtext ">
-                                <h3 class="title">BÀN</h3>
-                                <div class="more">
-                                    <span class="readmore">Xem thêm
-                                        <i class="icon-arrow-14"></i>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <h3 class="title2"><span>BÀN</span></h3>
-                        </div>
-                    </a>
-                </div>
-                            <div class="col-sm-6 col-md-6 col-lg-3  efch-4 ef-img-t">
-                    <a href="/categories/giuong" class="item">
-                        <div class="img  tRes_150">
-                            <img class="lazy-hidden" data-lazy-type="image" src="./resources/img/hinh/giường.jpeg"
-                                
-								alt="GIƯỜNG" />
-
-                            <div class="divtext ">
-                                <h3 class="title">GIƯỜNG</h3>
-                                <div class="more">
-                                    <span class="readmore">Xem thêm
-                                        <i class="icon-arrow-14"></i>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <h3 class="title2"><span>GIƯỜNG</span></h3>
-                        </div>
-                    </a>
-                </div>
-                    </div>
-    </div>
+    <section class="products-section container-fluid">
+    <div class="row colum">
+            <div class="col span_1_of_4 about-picture">
+                <img src="./resources/img/hinh/Sofa.jpeg" alt="activities1">
+                <p class="picture-title"> Sofa</p>
+            </div>
+            <div class="col span_1_of_4 about-picture">
+                <img src="./resources/img/hinh/Ghế.jpeg" alt="activities2">
+                <p class="picture-title">Ghế</p>
+            </div>
+            <div class="col span_1_of_4 about-picture">
+                <img src="./resources/img/hinh/Bàn.jpeg" alt="activities3">
+                <p class="picture-title">Bàn</p>
+            </div>
+            <div class="col span_1_of_4 about-picture">
+                <img src="./resources/img/hinh/Giường.jpeg" alt="activities4">
+                <p class="picture-title">Giường</p>
+            </div>
+        </div>
 </section>              
 
     <section id="water" class="advertisement-section row">

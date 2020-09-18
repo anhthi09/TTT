@@ -29,7 +29,6 @@ require_once __DIR__ . "/../../autoload/autoload.php";
 
 
 
-
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" id="img">
                     <div id="myTabContent1" class="tab-content">
                         <div class="product-tab-list tab-pane fade active in" id="single-tab1">
@@ -41,9 +40,9 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" id="addcart">
                     <div class="single-product-details res-pro-tb">
-                        <h1 id="h1"><?php echo $row['name'] ?></h1>
+                        <h1 id="h1"><?php echo $row['tensanpham'] ?></h1>
                         <div class="single-pro-price">
-                            <span class="single-regular" id="giatien"><?php echo number_format( $row['gia']-$row['sale']*$row['gia']/100,0) ?> VNĐ</span>
+                            <span class="single-regular" id="giatien"><?php echo number_format( $row['gia'],0) ?> VNĐ</span>
                         </div>
                         <div class="color-quality-pro">
                             <div class="color-quality">
