@@ -6,8 +6,8 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
 
 <head>
 
-    <title>Nội thất| Ngoại thất và Decor| Hàng xuất khẩu cao cấp</title>
-
+    <title>Venus Furniture| Đồ Nội Thất Đẹp | Nội Thất Hiện Đại </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/TTT/public/admin/img/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./vendors/fonts/css/fontawesome.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -110,55 +110,103 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
 
 
         <div id="#" class="gioithieuimg col span-1_of_2 popup-gallery">
-            <a href="./resources/img/hinh/banghe.jpeg" title="sản phẩm mới nhất của bộ sưu tập"><img class="#" src="./resources/img/hinh/banghe.jpeg" alt="photo"></a>
+            <a href="./resources/img/hinh/banghe.jpeg" title="#"><img class="#" src="./resources/img/hinh/banghe.jpeg" alt="photo"></a>
         </div>
         <!-- kết thúc phần giới thiệu sản phẩm mới -->
     </section>
 
-    <section class="products-section container-fluid ">
-        <!-- Bắt đầu phần phân loại sản phẩm -->
-        <div class="row colum">
-            <div class="col md-6 about-picture">
+    <section class="lists-1 sec-b sec-3 group-ef lazy-hidden">
+    <div class="container">
+        <div class="row grid-space-20">
+                            <div class="col-sm-6 col-md-6 col-lg-3  efch-1 ef-img-t">
+                    <a href="/categories/sofa" class="item">
+                        <div class="img  tRes_150">
+                            <img class="lazy-hidden" data-lazy-type="image" src="./resources/img/hinh/Sofa.jpeg"
+                        
+								alt="SOFA" />
 
-                <a href="pages/show-row.php?id=71"><img src="./resources/img/1.webp" alt="photo"></a>
-                <p class="picture-title"> Ngoại Thất</p>
-            </div>
-            <div class="col md-6 about-picture">
+                            <div class="divtext ">
+                                <h3 class="title">SOFA</h3>
+                                <div class="more">
+                                    <span class="readmore">Xem thêm
+                                        <i class="icon-arrow-14"></i>
+                                    </span>
+                                </div>
+                            </div>
 
-                <a href="pages/show-row.php?id=9"> <img style="height: 100%;" src="./resources/img/soddfa.webp" alt="photo"></a>
-                <p href="#" class="picture-title"> Sofa</p>
-            </div>
-        </div>
+                            <h3 class="title2"><span>SOFA</span></h3>
+                        </div>
+                    </a>
+                </div>
+                            <div class="col-sm-6 col-md-6 col-lg-3  efch-2 ef-img-t">
+                    <a href="/categories/ghe" class="item">
+                        <div class="img  tRes_150">
+                            <img class="lazy-hidden" data-lazy-type="image" src="./resources/img/hinh/Ghế.jpeg"
+                               
+								alt="GHẾ" />
 
-        <div class="row colum">
-            <div class="col md about-picture">
+                            <div class="divtext ">
+                                <h3 class="title">GHẾ</h3>
+                                <div class="more">
+                                    <span class="readmore">Xem thêm
+                                        <i class="icon-arrow-14"></i>
+                                    </span>
+                                </div>
+                            </div>
 
-                <a href="pages/show-row.php?id=26"> <img src="./resources/img/chaucay.webp" alt="photo"></a>
-                <p class=" picture-title "> Chậu Cây</p>
-            </div>
-            <div class="col md-4 about-picture">
+                            <h3 class="title2"><span>GHẾ</span></h3>
+                        </div>
+                    </a>
+                </div>
+                            <div class="col-sm-6 col-md-6 col-lg-3  efch-3 ef-img-t">
+                    <a href="/categories/ban" class="item">
+                        <div class="img  tRes_150">
+                            <img class="lazy-hidden" data-lazy-type="image" src="./resources/img/hinh/Bàn.jpeg"
+                              
+								alt="BÀN" />
 
-                <a href="pages/show-row.php?id=17"> <img src="./resources/img/banghe.webp" alt="photo"></a>
-                <p class="picture-title"> Bàn ghế</p>
-            </div>
-            <div class="col md-4 about-picture">
+                            <div class="divtext ">
+                                <h3 class="title">BÀN</h3>
+                                <div class="more">
+                                    <span class="readmore">Xem thêm
+                                        <i class="icon-arrow-14"></i>
+                                    </span>
+                                </div>
+                            </div>
 
-                <a href="pages/show-row.php?id=72"> <img src="./resources/img/decor.webp" alt="photo"></a>
-                <p class="picture-title"> Trang trí</p>
-            </div>
-        </div>
-        <!-- Kết thúc phân loại sản phẩm -->
-    </section>
+                            <h3 class="title2"><span>BÀN</span></h3>
+                        </div>
+                    </a>
+                </div>
+                            <div class="col-sm-6 col-md-6 col-lg-3  efch-4 ef-img-t">
+                    <a href="/categories/giuong" class="item">
+                        <div class="img  tRes_150">
+                            <img class="lazy-hidden" data-lazy-type="image" src="./resources/img/hinh/giường.jpeg"
+                                
+								alt="GIƯỜNG" />
+
+                            <div class="divtext ">
+                                <h3 class="title">GIƯỜNG</h3>
+                                <div class="more">
+                                    <span class="readmore">Xem thêm
+                                        <i class="icon-arrow-14"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <h3 class="title2"><span>GIƯỜNG</span></h3>
+                        </div>
+                    </a>
+                </div>
+                    </div>
+    </div>
+</section>              
 
     <section id="water" class="advertisement-section row">
         <!-- Bắt đầu giới thiệu về thương hiệu -->
         <div class="col md-6 popup-gallery ">
-            <a href="./resources/img/gt.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="advertisement-section-img" src="./resources/img/gt.webp" alt="poto" st="0"> </a>
-            <a href="./resources/img/hình trang chủ/thác nước 1.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="advertisement-section-img" src="./resources/img/hình trang chủ/thác nước 1.webp" alt="poto" st="1" style="display:none"> </a>
-            <a href="./resources/img/hình trang chủ/thác nước 2.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="advertisement-section-img" src="./resources/img/hình trang chủ/thác nước 2.webp" alt="poto" st="2" style="display:none"> </a>
-            <a href="./resources/img/hình trang chủ/thác nước 3.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="advertisement-section-img" src="./resources/img/hình trang chủ/thác nước 3.webp" alt="poto" st="3" style="display:none"> </a>
-            <a href="./resources/img/hình trang chủ/thác nước 4.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="advertisement-section-img" src="./resources/img/hình trang chủ/thác nước 4.webp" alt="poto" st="4" style="display:none"> </a>
-            <a href="./resources/img/hình trang chủ/thác nước 5.webp" title="sản phẩm mới nhất của bộ sưu tập"><img class="advertisement-section-img" src="./resources/img/hình trang chủ/thác nước 5.webp" alt="poto" st="5" style="display:none"> </a>
+            <a href="./resources/img/hinh/bia.jpeg" title="#"><img class="advertisement-section-img" src="./resources/img/hinh/bia.jpeg" alt="photo" st="0"> </a>
+        
 
         </div>
 
