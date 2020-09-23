@@ -39,14 +39,14 @@ CREATE TABLE `admins` (
   `level` tinytext DEFAULT '1',
   `avatar` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updata_up` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `admins`
 --
 
-INSERT INTO `admins` (`id`, `name`, `address`, `email`, `account`, `password`, `phone`, `status`, `level`, `avatar`, `created_at`, `updata_up`) VALUES
+INSERT INTO `admins` (`id`, `name`, `address`, `email`, `account`, `password`, `phone`, `status`, `level`, `avatar`, `created_at`, `updated_at`) VALUES
 (218, 'Trần Duy Thịnh', '50/3 Lạc Long Quân Phường 3 Quận 11', 'thinhtran122000@gmail.com', 'thinhtran122000', '123456', '0768004506', '1', '1', NULL, '2020-09-14 09:36:02', '2020-09-14 09:36:02');
 
 -- --------------------------------------------------------
@@ -64,14 +64,14 @@ CREATE TABLE `category` (
   `home` tinyint(100) DEFAULT 0,
   `status` tinyint(4) DEFAULT 0,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `category`
 --
 
-INSERT INTO `category` (`id`, `name`, `slug`, `images`, `banner`, `home`, `status`, `created_at`, `updated`) VALUES
+INSERT INTO `category` (`id`, `name`, `slug`, `images`, `banner`, `home`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Phòng Khách', NULL, NULL, NULL, 0, 0, '2020-09-16 11:25:21', '2020-09-16 11:25:21'),
 (2, 'Phòng Ngủ', NULL, NULL, NULL, 0, 0, '2020-09-16 11:25:21', '2020-09-16 11:25:21'),
 (3, 'Phòng Bếp', NULL, NULL, NULL, 0, 0, '2020-09-16 11:25:54', '2020-09-16 11:25:54'),
@@ -124,14 +124,14 @@ CREATE TABLE `product` (
   `view` int(11) DEFAULT 0,
   `hot` tinyint(4) DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updata_up` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `slug`, `soluong`, `gia`, `avatar`, `category`, `type`, `content`, `head`, `view`, `hot`, `created_at`, `updata_up`) VALUES
+INSERT INTO `product` (`id`, `name`, `slug`, `soluong`, `gia`, `avatar`, `category`, `type`, `content`, `head`, `view`, `hot`, `created_at`, `updated_at`) VALUES
 (1111, 'Sofa - Màu Be', NULL, 100, 3000000, NULL, 1, 11, 'Gỗ cây dương vàng và gỗ dán.\r\nGhế ngồi được làm bằng vải công nghiệp cho thoải mái và độ bền.\r\nThi công khung khối góc.', 0, 0, 0, '2020-09-16 11:38:00', '2020-09-16 11:38:00'),
 (1112, 'Sofa Vải Lanh Water-Look', NULL, 100, 20000000, NULL, 1, 11, 'Mềm mại nhưng vẫn sành điệu, chất liệu vải lanh nhìn quanh ghế sofa tạo nên sự lôi cuốn.\r\nMột màu xám đen cung cấp một mỏ neo trung tính, thanh lịch để xây dựng không gian sống của bạn xung quanh.\r\nỐng vải làm nổi bật độ dày và thoải mái của đệm bọt mật độ cao.\r\nGỗ màu sô cô la đóng khung cơ sở của đồ nội thất và kéo dài xuống chân hỗ trợ.', 0, 0, 0, '2020-09-16 11:38:00', '2020-09-16 11:38:00'),
 (1121, 'Tủ Cổ Điển', NULL, 100, 9000000, NULL, 1, 12, 'Sơn bán bóng có keo\r\n2 ngăn kéo\r\nBàn tay đã hoàn thành', 0, 0, 0, '2020-09-16 11:43:09', '2020-09-16 11:43:09'),
@@ -253,14 +253,14 @@ CREATE TABLE `users` (
   `status` tinyint(4) DEFAULT 1,
   `token` varchar(50) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updata_up` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `address`, `phone`, `Account`, `password`, `avatar`, `status`, `token`, `created_at`, `updata_up`) VALUES
+INSERT INTO `users` (`id`, `name`, `email`, `address`, `phone`, `Account`, `password`, `avatar`, `status`, `token`, `created_at`, `updated_at`) VALUES
 (1512, 'Trần Duy Thịnh', 'thinhtran122000@gmail.com', '50/3 Lạc Long Quân Phường 3 Quận 11', '0768004506', 'thinhtran122000', '123456', NULL, 1, '1', '2020-09-16 13:08:14', '2020-09-16 13:08:14'),
 (1612, 'Nguyễn Lam Trường', 'truongnguyen1231998@gmail.com', '280 An Dương Vương Phường 4 Quận 5', '0965967706', 'truongnguyen1231998', '123456', NULL, 1, '1', '2020-09-16 13:26:09', '2020-09-16 13:26:09');
 

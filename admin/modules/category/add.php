@@ -50,7 +50,7 @@
 <?php
    $tendanhmuc = @$_REQUEST['tendanhmuc'];
    if (isset($tendanhmuc)) {
-       $sql = "INSERT INTO `category` (`id`, `name`, `slug`, `images`, `banner`, `home`, `status`, `created_at`, `updated`) VALUES (NULL, '{$tendanhmuc}', NULL, NULL, NULL, '0', '0', current_timestamp(), current_timestamp())";
+       $sql = "INSERT INTO `category` (`id`, `name`, `slug`, `images`, `banner`, `home`, `status`, `created_at`, `updated_at`) VALUES (NULL, '{$tendanhmuc}', NULL, NULL, NULL, '0', '0', current_timestamp(), current_timestamp())";
        echo $sql;
        $result = DataProvider::ExecuteQuery($sql);
    }

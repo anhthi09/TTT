@@ -104,11 +104,11 @@
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price"> <?php echo number_format ($row3['gia']-$row3['gia']*$row3['sale']/100,0) ?> VNĐ</td>
+                    <td data-th="Price"> <?php echo number_format ($row3['gia'],0) ?> VNĐ</td>
                     <td data-th="Quantity"><?php echo $row1['soluong'] ?>
                     </td>
                    
-                    <td data-th="Subtotal" class="text-center"> <?php echo number_format (($row3['gia']-$row3['gia']*$row3['sale']/100)*$row1['soluong'],0) ?>VNĐ</td>
+                    <td data-th="Subtotal" class="text-center"> <?php echo number_format (($row3['gia'])*$row1['soluong'],0) ?>VNĐ</td>
                    
                     
                 </tr>

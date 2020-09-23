@@ -41,7 +41,7 @@ if( isset($_GET["trang"]) ){
                   <?php
                   try {
                      $from = ($trang -1 ) * $sotin1trang;
-                     $sql = "SELECT id, name, home, status, created_at,updated FROM `category` LIMIT $from, $sotin1trang";
+                     $sql = "SELECT id, name, home, status, created_at,updated_at FROM `category` LIMIT $from, $sotin1trang";
                      $result = DataProvider::ExecuteQuery($sql);
                      $stt = 0;
                      // <td>
@@ -55,7 +55,7 @@ if( isset($_GET["trang"]) ){
                              <td> {$row['name']} </td>
                               
                              <td>{$row['created_at']}</td>
-                             <td>{$row['updated']}</td>
+                             <td>{$row['updated_at']}</td>
                              <td>
                                  <a href="edit.php?id= {$row['id']} "> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                                  <a href="delete.php?id= {$row['id']} " onclick="return confirm('Bạn có chắc muốn xóa danh mục này?')"> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>

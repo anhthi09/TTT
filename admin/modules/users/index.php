@@ -43,7 +43,7 @@ if( isset($_GET["trang"]) ){
                   <?php
                   try {
                      $from = ($trang -1 ) * $sotin1trang;
-                     $sql = "SELECT id, name,address,email,Account, password,phone, avatar, created_at, updata_up  FROM `users` ";
+                     $sql = "SELECT id, name,address,email,Account, password,phone, avatar, created_at, updated_at  FROM `users` ";
                      
                      
                      if (isset($_REQUEST['ok'])) 
@@ -91,7 +91,7 @@ if( isset($_GET["trang"]) ){
                        <td> {$row['password']} </td>
                        <td> {$row['phone']} </td>
                        <td>{$row['created_at']}</td>
-                       <td>{$row['updata_up']}</td>
+                       <td>{$row['updated_at']}</td>
                        <td>
                            <a href="edit.php?id= {$row['id']} "> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                            <a href="delete.php?id= {$row['id']} "> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
@@ -127,7 +127,7 @@ if( isset($_GET["trang"]) ){
                              <td> {$row['password']} </td>
                              <td> {$row['phone']} </td>
                              <td>{$row['created_at']}</td>
-                             <td>{$row['updata_up']}</td>
+                             <td>{$row['updated_at']}</td>
                              <td>
                                  <a href="edit.php?id= {$row['id']} "> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                                  <a href="delete.php?id= {$row['id']}" onclick="return confirm('Bạn có chắc muốn xóxa tài khoảng người dùng này?')"> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>

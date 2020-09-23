@@ -69,10 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label>Giá</label>
                             <input type="number" class="form-control" placeholder="9 000 000" name="Gia"<?php echo "value='{$row['gia']}'"?>>
                         </div>
-                        <div class="form-group">
-                            <label>Giảm Giá</label>
-                            <input type="number" class="form-control" placeholder="1 000 000" name="GiamGia"<?php echo "value='{$row['sale']}'"?>>
-                        </div> 
+                        
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Ảnh</label>
                             <input type="file" class="form-control-file" id="exampleFormControlFile1" name="Hinh" ?>
@@ -95,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 TenSP: { required: true ,minlength:3 },
                                 soluong:{required: true,digits:true,min:1},
                                 Gia:{required: true,digits:true,min:1},
-                                GiamGia:{required: true,digits:true},
+                                
                                 
                                 noidung:{required:true}
                             },
@@ -103,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     TenSP: { required: "Vui lòng nhập tên sản phẩm", minlength: "Vui lòng nhập lớn hơn 3 kí tự"},
                                     soluong:{required: "Vui lòng nhập số lượng sản phẩm",digits:"Vui lòng nhập số nguyên",min:"Vui lòng nhập số lượng lớn hơn 0"},
                                     Gia:{required: "Vui lòng nhập giá sản phẩm",min:"Vui lòng nhập giá lớn hơn 0",digits:"Vui lòng nhập số nguyên"},
-                                    GiamGia:{required: "Vui lòng nhập giảm giá sản phẩm",digits:"Vui lòng nhập số nguyên"},
+                                   
                                   
                                     noidung:{required:"Vui lòng nhập mô tả"}
 
@@ -120,8 +117,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 <?php
 if (isset($_REQUEST['TenSP'])) {
-    // $sql = "UPDATE `product` SET `name` = '{$_REQUEST['TenSP']}',`soluong` = '{$_REQUEST['soluong']}' ,`gia` = '{$_REQUEST['Gia']}',`sale` = '{$_REQUEST['GiamGia']}' ,`category` = '{$_REQUEST['loaisp']}',`type` = '{$_REQUEST['type']}',`content` = '{$_REQUEST['noidung']} 'WHERE `product`.`id` = $id";
-    $sql = " UPDATE `product` SET `name` = '{$_REQUEST['TenSP']}', `soluong` = '{$_REQUEST['soluong']}', `gia` = '{$_REQUEST['Gia']}', `sale` = '{$_REQUEST['GiamGia']}',`category` = '{$_REQUEST['loaisp']}', `type` = '{$_REQUEST['type']}', `content` = '{$_REQUEST['noidung']}' WHERE `product`.`id` =  $id";
+    
+    $sql = " UPDATE `product` SET `name` = '{$_REQUEST['TenSP']}', `soluong` = '{$_REQUEST['soluong']}', `gia` = '{$_REQUEST['Gia']}', `category` = '{$_REQUEST['loaisp']}', `type` = '{$_REQUEST['type']}', `content` = '{$_REQUEST['noidung']}' WHERE `product`.`id` =  $id";
    
    
     DataProvider::ExecuteQuery($sql);
