@@ -21,8 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ptoduct_id= $key;
         $soluong= $value['soluong'];
         $gia=$value['gia'];
-        $sale=$value['sale'];
-        $sql = "INSERT INTO `orders` (`id`, `transaction_id`, `product_id`, `soluong`, `gia`, `sale`,`created_at`) 
+        $sql = "INSERT INTO `orders` (`id`, `transaction_id`, `product_id`, `soluong`, `gia`,`created_at`) 
         VALUES (NULL, '$transaction_id', '$ptoduct_id', '$soluong', '$gia', '$sale', current_timestamp())";
        
         DataProvider::ExecuteQuery($sql);

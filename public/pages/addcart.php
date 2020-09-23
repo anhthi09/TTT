@@ -27,7 +27,7 @@ if (!isset ($_SESSION['name'])){
     $_SESSION['cart'][$id]['soluong']= 1;
     $_SESSION['cart'][$id]['avatar']= $row['avatar'];
     $_SESSION['cart'][$id]['gia']= $row['gia'];
-    $_SESSION['cart'][$id]['sale']= $row['sale'];
+    
 
     }
     else{
