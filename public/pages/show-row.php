@@ -3,161 +3,82 @@ require_once __DIR__ . "/../../layouts/header.php";
 require_once __DIR__ . "/../../autoload/autoload.php";
 ?>
 <!-- Begin element -->
+<!DOCTYPE html>
+<html>
 
-<element class="container">
-    <div class="left_nav">
-        <h2 class="title-nav"> Filter by </h2>
-        <ul class="content_left_nav">Sắp Xếp Theo Giá
-            <li>
-                <label>
-                    <input type="radio" class="sort" id="z-a" data-oder="DESC" name="sortgia"></input>
-                    Từ cao đến thấp
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="radio" class="sort" id="a-z" data-oder="ASC" name="sortgia"></input>
-                    Từ thấp đến cao
-                </label>
-            </li>
+<head>
+</head>
 
-        </ul>
-        <ul class="content_left_nav"> Sắp Xếp Theo Tên
-            <li>
-                <label>
-                    <input type="radio" class="sort" id="A-Z" data-oder="ASC" name="sortten"></input>
-                    A-Z
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="radio" class="sort" id="Z-A" data-oder="DESC" name="sortten"></input>
-                    Z-A
-                </label>
-            </li>
+<body>
+    <element class="container">
+        <div class="left_nav">
+            <h2 class="title-nav"> Filter by </h2>
+            <ul class="content_left_nav">Sắp Xếp Theo Giá
+                <li>
+                    <label>
+                        <input type="radio" class="sort" id="z-a" data-oder="DESC" name="sortgia"></input>
+                        Từ cao đến thấp
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" class="sort" id="a-z" data-oder="ASC" name="sortgia"></input>
+                        Từ thấp đến cao
+                    </label>
+                </li>
 
-        </ul>
+            </ul>
+            <ul class="content_left_nav"> Sắp Xếp Theo Tên
+                <li>
+                    <label>
+                        <input type="radio" class="sort" id="A-Z" data-oder="ASC" name="sortten"></input>
+                        A-Z
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" class="sort" id="Z-A" data-oder="DESC" name="sortten"></input>
+                        Z-A
+                    </label>
+                </li>
 
-    </div>
-    <div class="san_pham row">
-        <?php
-         
-        if ( isset ($type10)  && $search != "") 
-        {
-            $type11 = DataProvider::ExecuteQuery("$query");
-                          
-            
-            while ($row = mysqli_fetch_array($type11)  ) {
-             
-                $giagoc=number_format($row['gia'],0);
+            </ul>
+        </div>
+        <div class="san_pham row" id="spp">
+        </div>
+        <script>
+            var requestUrl = 'http://localhost:8080/api/product/read.php';
+            fetch(requestUrl, {
+                    method: "get"
+                })
+
                 
-                                   
-                  $chuoi = <<< EOD
-                                  <div class="khung_san_pham col-4">
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("spp").innerHTML = '';
+                    var content = ``;
+                    data.data.records.forEach(element => {
+                        content += `
+                <div class="khung_san_pham col-4">
                                   <div class="Hinh_anhsp">
-                                      <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
+                                      <a href=" xem-hang.php?id= ${element.id}"><img src="/TTT/admin/modules/product/img_product/ ${element.avatar}"  alt="poto"></a>
                                   </div>
                                   <div class="ten_sp">
-                                      <p> {$row['name']}</p>
+                                      <p> ${element.name}</p>
                                   </div>
                                   <div class="gia_sp">
-                                  <p>   $giagoc VNĐ </p>
+                                  <p>   ${element.gia} </p>
                                   </div>
-                                  </div>
-                              EOD;
-                  echo $chuoi;
-                
-             
-            }
+                                  </div>`;
+                    });
+                    document.getElementById("spp").innerHTML = content;
 
 
-        } 
-        else {
-            if(isset($_REQUEST['ok'])){
-                echo "<script> alert ('Không thể tìm kiếm sản phẩm của bạn! hãy xem các sản phẩm đang có nhé')</script>"; 
-            }
-            try {
-                $sql = "SELECT * FROM `product`";
-                if (isset($_GET['id'])) {
-                    $id = $_GET['id'];
-                    if ($id >=70){
-                        $sql .= "WHERE category =" . $id;
-                    }
-                    else{
-                        $sql .= "WHERE type =" . $id;
-                    }
-                    
-                }
-                $result = DataProvider::ExecuteQuery($sql);
-               
-             
-                while ($row = mysqli_fetch_array($result)) {
-                  $giagoc=number_format($row['gia'],0);
-           
-                                     
-                    $chuoi = <<< EOD
-                                    <div class="khung_san_pham col-4">
-                                    <div class="Hinh_anhsp">
-                                        <a href=" xem-hang.php?id= {$row['id']}"><img src="/TTT/admin/modules/product/img_product/{$row['avatar']}"  alt="poto"></a>
-                                    </div>
-                                    <div class="ten_sp">
-                                        <p> {$row['name']}</p>
-                                    </div>
-                                    <div class="gia_sp">
-                                    <p>   $giagoc VNĐ </p>
-                                    </div>
-                                    </div>
-                                EOD;
-                    echo $chuoi;
-            
-                
-            }
-            } catch (Exception $ex) {
-                echo "Không thể mở CSDL";
-            }
-            
-        }
+                });
+        </script>
+        <div class="clearfix"></div>
+    </element>
+</body>
 
-
-        ?>
-
-
-
-
-    </div>
-
-
-
-
-
-    <!-- <script>  
- $(document).ready(function(){ 
-    $(document).on('click','.sort', function(){
-         var column_name =$(this).attr("id");   
-         if (column_name=='a-z'|| column_name=="z-a"){
-             column_name='gia';
-         }
-         
-         if (column_name=='A-Z'|| column_name=="Z-A"){
-             column_name='name'; 
-         }
-         
-         var order =$(this).data("order");
-           $.ajax({  
-                url:"sort.php",  
-                method:"POST",  
-                data:{column_name  :column_name, order:order, sql:$sql },  
-                success:function(data)  
-                {  
-                     $('#employee_table').html(data);  
-                   
-                }  
-           })  
-        })
-    });
-</script> -->
-
-    <div class="clearfix"></div>
-</element>
-
+</html>
 <?php require_once __DIR__ . "/../../layouts/footer.php" ?>

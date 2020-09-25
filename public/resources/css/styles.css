@@ -96,8 +96,8 @@
         margin: 5px 10px;
     }
     
-    .main-nav li .a:hover,
-    .main-nav li .a:active {
+    .main-nav li li .a:hover,
+    .main-nav li li .a:active {
         border-bottom: 4px solid #cccccc;
         color: rgb(214, 93, 37);
     }

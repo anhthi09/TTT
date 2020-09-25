@@ -20,7 +20,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
     <link rel="stylesheet" href="vendors/css/magnific-popup.css">
     <script src="./vendors/js/jquery-3.5.0.js"></script>
 
-    
+
     <script src="https://kit.fontawesome.com/973a1060ee.js" crossorigin="anonymous"></script>
 
 
@@ -31,82 +31,75 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
     <header id="Home">
         <!-- Begin head  -->
         <nav>
-
             <a href="#Home"><img class="logo" src="./resources/img/hinh/logo2.png" alt="logo"></a>
             <div>
-                <ul class="main-nav">
-                    <?php
-                    $sql = "SELECT * FROM `category`";
-                    $category = DataProvider::ExecuteQuery($sql);
-                    while ($loai = mysqli_fetch_array($category)) {
+                <ul class="main-nav"> 
+                    <li id="mn">
+                        <script>
+                            var requestUrl = 'http://localhost:8080/api/category/read.php';
+                            fetch(requestUrl, {
+                                    method: "get"
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log(data.data.records);
+                                    document.getElementById("mn").innerHTML = '';
+                                    var content = ``;
+                                    data.data.records.forEach(element => {
+                                        content += `<a class="a" href="/TTT/public/pages/show-row.php?id=${element.id}">${element.name}</a>`
+                                       ;
+                                    });
+                                    document.getElementById("mn").innerHTML = content;
+                                });
+                        </script>
+                         <ul class="submenu"></ul>
+                    </li>
+                        <a class="fas fa-shopping-cart " href="pages/gio-hang.php" id="icoi"></a>
+                        <?php if (isset($_SESSION['name'])) :   ?>
 
-                        $chuoi = <<< EOD
-                          <li><a class="a" href="/TTT/public/pages/show-row.php?id={$loai['id']}">  {$loai['name']}</a>
-                          <ul class="submenu">
-                          EOD;
-                        echo $chuoi;
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <?php echo $_SESSION['name'] ?>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="pages/don-hang.php">Đơn hàng</a>
+                                    <a class="dropdown-item" href="#"></a>
+                                    <a class="dropdown-item" href="pages/ho-so.php">Hồ sơ</a>
 
-                        $sql1 = "SELECT * FROM `type` WHERE `category` = {$loai['id']}";
-                        $type = DataProvider::ExecuteQuery("$sql1");
-
-                        while ($type1 = mysqli_fetch_array($type)) {
-                            $chuoi1 = <<< EOD
-                      
-                            <li><a href="/TTT/public/pages/show-row.php?id={$type1['id']}"> {$type1['name']}</a></li>                                                                                  
-                     EOD;
-                            echo $chuoi1;
-                        }
-                        echo " </ul>";
-                    }
-                    echo   "</li>";
-                    ?>
-                    <a class="fas fa-shopping-cart " href="pages/gio-hang.php" id="icoi"></a>
-                   <?php if (isset($_SESSION['name'])) :   ?>
-
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <?php echo $_SESSION['name'] ?>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="pages/don-hang.php">Đơn hàng</a>
-                                <a class="dropdown-item" href="#"></a>
-                                <a class="dropdown-item" href="pages/ho-so.php">Hồ sơ</a>
-                               
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/TTT/public/pages/thoat.php">Đăng xuất</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/TTT/public/pages/thoat.php">Đăng xuất</a>
+                                </div>
                             </div>
-                        </div>
-                    <?php else : ?>
+                        <?php else : ?>
 
-                        <a class="far fa-user " href="pages/login.php" id="icoi"></a>
+                            <a class="far fa-user " href="pages/login.php" id="icoi"></a>
 
-                    <?php endif ?>
+                        <?php endif ?>
 
                 </ul>
             </div>
             <div class="mobile-nav-icon"><i class="fa fa-bars "></i></div>
         </nav>
-
+        </div>
         <div class="clearfix"> </div>
         <div class="ROW">
             <div class="heading-main-box">
-                
+
             </div>
-        </div>
-        <!-- end head -->
+            <!-- end head -->
     </header>
     <section class="About-section row ">
         <!-- Bắt đầu phần giới thiệu sản phẩm mới -->
         <div class="bosuutap col span_1_of_2 ">
-           
+
             <p class="tieude">Venus Furniture<br></p>
             <p class="gioithieu">
-            Việc ra đời của Venus Furniture là cả quá trình đúc kết, tìm hiểu về đặc thù của từng loại không gian và các xu hướng sở thích khác nhau từ người sử dụng. 
-            Những nghiên cứu kỹ lưỡng đó được kết hợp khéo léo cùng tài năng của các nhà thiết kế nổi tiếng Châu Âu, tạo nên dòng sản phẩm trang trí, đồ nội thất đẹp có độ ứng dụng cao với nhiều loại hình không gian khác nhau. 
-            Gần gũi và ấm cúng cho nhà ở; cởi mở và thời trang cho khách sạn; chuyên nghiệp, năng động khi sử dụng cho văn phòng... 
-            phong thái từ các thiết kế của Venus Furniture luôn tạo được sức hút bởi tính đa chiều trong cảm xúc mà chúng mang lại cho không gian.
+                Việc ra đời của Venus Furniture là cả quá trình đúc kết, tìm hiểu về đặc thù của từng loại không gian và các xu hướng sở thích khác nhau từ người sử dụng.
+                Những nghiên cứu kỹ lưỡng đó được kết hợp khéo léo cùng tài năng của các nhà thiết kế nổi tiếng Châu Âu, tạo nên dòng sản phẩm trang trí, đồ nội thất đẹp có độ ứng dụng cao với nhiều loại hình không gian khác nhau.
+                Gần gũi và ấm cúng cho nhà ở; cởi mở và thời trang cho khách sạn; chuyên nghiệp, năng động khi sử dụng cho văn phòng...
+                phong thái từ các thiết kế của Venus Furniture luôn tạo được sức hút bởi tính đa chiều trong cảm xúc mà chúng mang lại cho không gian.
             </p>
-           
+
         </div>
 
 
@@ -117,7 +110,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
     </section>
 
     <section class="products-section container-fluid">
-    <div class="row colum">
+        <div class="row colum">
             <div class="col span_1_of_4 about-picture">
                 <img src="./resources/img/hinh/Sofa.jpeg" alt="activities1">
                 <p class="picture-title"> Sofa</p>
@@ -135,13 +128,13 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
                 <p class="picture-title">Giường</p>
             </div>
         </div>
-</section>              
+    </section>
 
     <section id="water" class="advertisement-section row">
         <!-- Bắt đầu giới thiệu về thương hiệu -->
         <div class="col md-6 popup-gallery ">
             <a href="./resources/img/hinh/bia.jpeg" title="#"><img class="advertisement-section-img" src="./resources/img/hinh/bia.jpeg" alt="photo" st="0"> </a>
-        
+
 
         </div>
 
@@ -149,13 +142,13 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
             <p class="tieude2">Không Gian Sống...<br></p>
             <p class="modau">Tất cả những gì cần cho ngôi nhà của bạn</p>
             <p class="gioithieu2 ">
-            Đất nước Đan Mạch ghi dấu trong mọi lĩnh vực từ nghệ thuật, kiến trúc, khoa học công nghệ, bề dày lịch sử cho đến phúc lợi xã hội. 
-            Những thành tựu đó đã tạo nên nền tảng vững chắc để đảm bảo cho nhịp sống thanh bình, biết trân trọng các giá trị chân thực và luôn sáng tạo để mang đến những điều tốt đẹp cho cuộc sống. 
-            Đặc biệt hơn nữa, yếu tố tinh thần này luôn thể hiện rõ nét trong từng góc sống, từng tổ ấm của người dân nơi đây.
-            <br>Với tình yêu đặc biệt dành cho nội thất, đến với Venus Furniture là đến với một tinh thần Đan Mạch chân thực, đồng thời trải nghiệm về các không gian sống mang đậm chất Bắc Âu phóng khoáng mà đơn giản, tối giản mà hữu dụng.
-            Hãy để chúng tôi đồng hành cùng bạn tạo nên một không gian sống chứa đựng những ký ức tuyệt vời nhất.
-            <br> Venus Furniture luôn sẵn sàng mang đến những sản phẩm đồ nội thất đẹp giúp bạn tạo ra những không gian sống tiện nghi, 
-            thoải mái và giúp bạn thực sự thư giãn mỗi khi quay trở về nhà
+                Đất nước Đan Mạch ghi dấu trong mọi lĩnh vực từ nghệ thuật, kiến trúc, khoa học công nghệ, bề dày lịch sử cho đến phúc lợi xã hội.
+                Những thành tựu đó đã tạo nên nền tảng vững chắc để đảm bảo cho nhịp sống thanh bình, biết trân trọng các giá trị chân thực và luôn sáng tạo để mang đến những điều tốt đẹp cho cuộc sống.
+                Đặc biệt hơn nữa, yếu tố tinh thần này luôn thể hiện rõ nét trong từng góc sống, từng tổ ấm của người dân nơi đây.
+                <br>Với tình yêu đặc biệt dành cho nội thất, đến với Venus Furniture là đến với một tinh thần Đan Mạch chân thực, đồng thời trải nghiệm về các không gian sống mang đậm chất Bắc Âu phóng khoáng mà đơn giản, tối giản mà hữu dụng.
+                Hãy để chúng tôi đồng hành cùng bạn tạo nên một không gian sống chứa đựng những ký ức tuyệt vời nhất.
+                <br> Venus Furniture luôn sẵn sàng mang đến những sản phẩm đồ nội thất đẹp giúp bạn tạo ra những không gian sống tiện nghi,
+                thoải mái và giúp bạn thực sự thư giãn mỗi khi quay trở về nhà
             </p>
         </div>
         <!-- Kết thúc giới thiệu thương hiệu -->
@@ -201,55 +194,56 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         <ul>
             <!-- three footer columns are here -->
             <li>
-        
-        <div class="text">
-            <h4>LIÊN HỆ VỚI CHÚNG TÔI</h4>
-            <div>1.Đặt hàng trực tuyến (8h-21h)
-                   <br>  1900 63 64 76 (Phím 1)
-                    <br> <a href="/TTT/public/index.php">webshop@venus.vn</a>
-                    <br>2. CSKH (8h-17h)
-                    <br> 1900 63 64 76 (Phím 2)
-                    <br> <a href="#">cskh@venus.vn</a>
- 
-        </div>
-    </li>
-    <li>
-        
-        <div class="text">
-            <h4>KHUYẾN MÃI</h4>
-            <div>
-                 <a href="#">Sản Phẩm Khuyến Mãi</a><br><br>
-                 <a href="#">Tin Tức Khuyến Mãi</a><br>
+
+                <div class="text">
+                    <h4>LIÊN HỆ VỚI CHÚNG TÔI</h4>
+                    <div>1.Đặt hàng trực tuyến (8h-21h)
+                        <br> 1900 63 64 76 (Phím 1)
+                        <br> <a href="/TTT/public/index.php">webshop@venus.vn</a>
+                        <br>2. CSKH (8h-17h)
+                        <br> 1900 63 64 76 (Phím 2)
+                        <br> <a href="#">cskh@venus.vn</a>
+
+                    </div>
+            </li>
+            <li>
+
+                <div class="text">
+                    <h4>KHUYẾN MÃI</h4>
+                    <div>
+                        <a href="#">Sản Phẩm Khuyến Mãi</a><br><br>
+                        <a href="#">Tin Tức Khuyến Mãi</a><br>
+                    </div>
                 </div>
-        </div>
-    </li>
-    <li>
-        
-        <div class="text">
-            <h4>DỊCH VỤ KHÁCH HÀNG</h4>
-            <div>
-                 <a href="#">CLB Khách Hàng Thân Thiết</a><br>
-                 <a href="#">Thanh Toán</a><br>
-                 <a href="#">Đổi Hàng</a><br>
-                 <a href="#">Vận Chuyển Và Lắp Đặt</a><br>
-                 <a href="#">Bảo Hành Và Bảo Trì</a><br>
-                 <a href="#">Bảo Mật Thông Tin</a><br>
-            </div>
-        </div>
-    </li>
+            </li>
+            <li>
+
+                <div class="text">
+                    <h4>DỊCH VỤ KHÁCH HÀNG</h4>
+                    <div>
+                        <a href="#">CLB Khách Hàng Thân Thiết</a><br>
+                        <a href="#">Thanh Toán</a><br>
+                        <a href="#">Đổi Hàng</a><br>
+                        <a href="#">Vận Chuyển Và Lắp Đặt</a><br>
+                        <a href="#">Bảo Hành Và Bảo Trì</a><br>
+                        <a href="#">Bảo Mật Thông Tin</a><br>
+                    </div>
+                </div>
+            </li>
         </ul>
- 
+
         <div class="bar">
             <div class="bar-wrap">
-                <ul class="links"> <!-- footer menu -->
+                <ul class="links">
+                    <!-- footer menu -->
                     <li><a href="#">Trang Chủ</a></li>
                     <li><a href="#">Dịch Vụ Khách Hàng</a></li>
                     <li><a href="#">Chính Sách</a></li>
                     <li><a href="#">Tuyển Dụng</a></li>
                     <li><a href="#">Hỏi Đáp</a></li>
                 </ul>
-                
-                <div class="copyright">&copy;  2020 VENUS FURNITURE</div>
+
+                <div class="copyright">&copy; 2020 VENUS FURNITURE</div>
             </div>
         </div>
         <!-- end footer -->
@@ -262,7 +256,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
     </div>
     <!-- kết thúc hộp thoại tin nhắn -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="vendors/js/bootstrap.js"></script>
