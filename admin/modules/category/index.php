@@ -30,45 +30,57 @@ if( isset($_GET["trang"]) ){
                   <a href="add.php">Thêm Danh Mục</a>
                </div>
                <table>
-                  <tr>
-                     <th>Stt</th>
-                     <th>Tên Danh Mục</th>
-                     <!-- <th>Trạng Thái</th> -->
-                     <th>Ngày Tạo</th>
+            
+               </table>
+               <script>
+                  var requestUrl = 'http://localhost:8080/api/api/category/read.php';
+                  fetch(requestUrl, {
+                        method: "get"
+                     })
+
+                     .then(response => response.json())
+                     .then(data => {
+                        document.querySelector('table').innerHTML = '';
+                        var content = ` <tr>
+                     <th>STT</th>                 
+                     <th>Tên Danh mục</th>
+                     <th>Ngày thêm</th>
                      <th>Ngày Sửa</th>
                      <th>Setting</th>
-                  </tr>
-                  <?php
-                  try {
-                     $from = ($trang -1 ) * $sotin1trang;
-                     $sql = "SELECT id, name, home, status, created_at,updated_at FROM `category` LIMIT $from, $sotin1trang";
-                     $result = DataProvider::ExecuteQuery($sql);
-                     $stt = 0;
-                     // <td>
-                     //             <button class={"pd-setting"} ></button>
-                     //          </td>
-                     while ($row = mysqli_fetch_array($result)) {
-                        $stt++;
-                        $chuoi = <<< EOD
-                             <tr>
-                             <td>$stt</td>
-                             <td> {$row['name']} </td>
-                              
-                             <td>{$row['created_at']}</td>
-                             <td>{$row['updated_at']}</td>
-                             <td>
-                                 <a href="edit.php?id= {$row['id']} "> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                 <a href="delete.php?id= {$row['id']} " onclick="return confirm('Bạn có chắc muốn xóa danh mục này?')"> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
-                             </td>
-                         </tr>
-                         EOD;
-                        echo $chuoi;
-                     }
-                  } catch (Exception $ex) {
-                     echo "Không thể mở CSDL";
-                  }
-                  ?>
-               </table>
+                  </tr>`;
+                        data.data.records.forEach(element => {
+                           content += `
+                        <tr id="row-${element.id}">
+                                         <td> ${element.id}</td>            
+                                         <td> ${element.name}</td>
+                                         <td> ${element.created_at}</td>
+                                         <td> ${element.updated_at}</td>
+                                         <td>
+                                             <a href="edit.php?id=${element.id}"> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                             <a> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="removeElement(${element.id})"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
+                                         </td>
+                                     </tr>`;
+                        });
+                        document.querySelector('table').innerHTML = content;
+
+                     });
+                     
+                     function removeElement(id){
+                      var removeNode=document.querySelector('#row-'+id);
+                       removeNode.parentNode.removeChild(removeNode);
+                       var removeUrl="http://localhost:8080/api/api/category/delete.php";
+                       fetch(removeUrl,{
+                          method:"DELETE"
+                       })
+                          .then(response=> response.json())
+                          .then(data=>{
+                             console.log(data);
+                          })
+                   
+                   }
+               </script>
+
+
                <div id="phantrangcategory">
              <?php
              $x = "SELECT id FROM `category`";

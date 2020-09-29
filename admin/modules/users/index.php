@@ -26,125 +26,68 @@ if( isset($_GET["trang"]) ){
                   <a href="add.php">Thêm User</a>
                </div>
                <table>
-                  <tr>
-                     <th>Stt</th>
+               </table>
+               <script>
+                  var requestUrl = 'http://localhost:8080/api/api/user/read.php';
+                  fetch(requestUrl, {
+                        method: "get"
+                     })
+
+                     .then(response => response.json())
+                     .then(data => {
+                        document.querySelector('table').innerHTML = '';
+                        var content = ` <tr>
+                     <th>STT</th>                 
                      <th>Ảnh Đại Diện</th>
-                     <th>Tên User</th>
+                     <th>Tên Người Dùng</th>
                      <th>Địa Chỉ</th>
                      <th>Email</th>
-
                      <th>Account</th>
-                     <th>password</th>
+                     
                      <th>Phone</th>
                      <th>Ngày Tạo</th>
                      <th>Ngày Sửa</th>
                      <th>Setting</th>
-                  </tr>
-                  <?php
-                  try {
-                     $from = ($trang -1 ) * $sotin1trang;
-                     $sql = "SELECT id, name,address,email,Account, password,phone, avatar, created_at, updated_at  FROM `users` ";
+                  </tr>`;
+                        data.data.records.forEach(element => {
+                           content += `
+                        <tr id="row-${element.id}">
+                                         <td> ${element.id}</td>            
+                                         <td><img src="img_users/"${element.avatar} ></img></td>                           
+                                         <td> ${element.name}</td>
+                                         <td> ${element.address}</td>
+                                         <td> ${element.email}</td>
+                                         <td> ${element.Account} </td>
+                                         
+                                         <td> ${element.phone} </td>
+                                         <td> ${element.created_at}</td>
+                                         <td> ${element.updated_at}</td>
+                                         <td>
+                                             <a href="edit.php?id=${element.id}"> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                             <a> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="removeElement(${element.id})"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
+                                         </td>
+                                     </tr>`;
+                        });
+                        document.querySelector('table').innerHTML = content;
+
+                     });
                      
-                     
-                     if (isset($_REQUEST['ok'])) 
-                     {
-                      
-                        
+                     function removeElement(id){
+                      var removeNode=document.querySelector('#row-'+id);
+                       removeNode.parentNode.removeChild(removeNode);
+                       var removeUrl="http://localhost:8080/api/api/user/delete.php";
+                       fetch(removeUrl,{
+                          method:"DELETE"
+                       })
+                          .then(response=> response.json())
+                          .then(data=>{
+                             console.log(data);
+                          })
+                   
+                   }
+               </script>
 
-                  // Gán hàm addslashes để chống sql injection
-                  $search = addslashes($_GET['search']);
-                     
-                  // Nếu $search rỗng thì báo lỗi, tức là người dùng chưa nhập liệu mà đã nhấn submit.
-               if (empty($search)) {
-                     echo "<script> alert ('Hãy nhập tên người dùng để tìm kiếm nhé!')
-                     location.href='index.php'</script>"; 
 
-               } 
-               else
-               {
-    
-
-            $sql .=  " WHERE  `name` LIKE '%$search%' LIMIT $from, $sotin1trang";   
-
-            $type11 = DataProvider::ExecuteQuery("$sql");
-            
-            $type10 = mysqli_fetch_array($type11);
-      
-            if (isset ($type10)  && $search != "") 
-            {      
-      
-      
-               $type11 = DataProvider::ExecuteQuery("$sql");
-               $stt = 0;
-               while ($row = mysqli_fetch_array($type11)) 
-               {
-                  $stt++;
-                  $chuoi = <<< EOD
-                       <tr>
-                       <td>$stt</td>
-                       <td><img src="img_users/{$row['avatar']}" ></img>  </td>
-                       <td> {$row['name']} </td>
-                       
-                       <td> {$row['address']} </td>
-                       <td> {$row['email']} </td>
-                       <td> {$row['Account']} </td>
-                       <td> {$row['password']} </td>
-                       <td> {$row['phone']} </td>
-                       <td>{$row['created_at']}</td>
-                       <td>{$row['updated_at']}</td>
-                       <td>
-                           <a href="edit.php?id= {$row['id']} "> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                           <a href="delete.php?id= {$row['id']} "> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
-                       </td>
-                   </tr>
-                   EOD;
-                  echo $chuoi;
-               }
-            }
-             else {
-                  echo "<script> alert ('Hiện tên người dùng bạn vừa nhập không tồn tại');
-                  location.href='index.php'</script> "; 
-                 }
-            }
-
-         }
-    
-                     else {
-                     $result = DataProvider::ExecuteQuery($sql);
-            
-                     $stt = 0;
-                     while ($row = mysqli_fetch_array($result)) {
-                        $stt++;
-                        $chuoi = <<< EOD
-                             <tr>
-                             <td>$stt</td>
-                             <td><img src="img_users/{$row['avatar']}" ></img>  </td>
-                             <td> {$row['name']} </td>
-                             
-                             <td> {$row['address']} </td>
-                             <td> {$row['email']} </td>
-                             <td> {$row['Account']} </td>
-                             <td> {$row['password']} </td>
-                             <td> {$row['phone']} </td>
-                             <td>{$row['created_at']}</td>
-                             <td>{$row['updated_at']}</td>
-                             <td>
-                                 <a href="edit.php?id= {$row['id']} "> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                 <a href="delete.php?id= {$row['id']}" onclick="return confirm('Bạn có chắc muốn xóxa tài khoảng người dùng này?')"> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
-                             </td>
-                         </tr>
-                         EOD;
-                        echo $chuoi;
-
-                     }      
-                     
-                  }     
-
-                  } catch (Exception $ex) {
-                     echo "Không thể mở CSDL";
-                  }
-                  ?>
-               </table>
                <div id="phantrangusers">
              <?php
              $x = "SELECT id FROM `users`";

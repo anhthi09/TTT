@@ -30,42 +30,57 @@ if( isset($_GET["trang"]) ){
                   <a href="add.php">Thêm Loại</a>
                </div>
                <table>
-                  <tr>
-                     <th>Stt</th>
-                     <th>Tên Danh Mục</th>
-                     <th>Loại</th>
-                     <th>Setting</th>
-                  </tr>
-                  <?php
-                  try {
-                     $from = ($trang -1 ) * $sotin1trang;
-                     $sql = "SELECT id, name, category FROM `type` LIMIT $from, $sotin1trang";
-                     $result = DataProvider::ExecuteQuery($sql);
-                     $stt = 0;
-                     while ($row = mysqli_fetch_array($result)) {
-                        $sql1="SELECT name FROM `category` WHERE `id` = '{$row['category']}'";                  
-                        $result1= DataProvider::ExecuteQuery($sql1);
-                        $row1= mysqli_fetch_array($result1);
-                        $stt++;
-                        $chuoi = <<< EOD
-                             <tr>
-                             <td>$stt</td>
-                             <td> {$row1['name']}</td>
-                             <td> {$row['name']} </td>
-                             
-                             <td>
-                                 <a href="edit.php?id= {$row['id']} "> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                 <a href="delete.php?id= {$row['id']}" onclick="return confirm('Bạn có chắc muốn xóa loại sản phẩm này?')"> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
-                             </td>
-                         </tr>
-                         EOD;
-                        echo $chuoi;
-                     }
-                  } catch (Exception $ex) {
-                     echo "Không thể mở CSDL";
-                  }
-                  ?>
+                  
                </table>
+               <script>
+                  var requestUrl = 'http://localhost:8080/api/api/type/read.php';
+                  fetch(requestUrl, {
+                        method: "get"
+                     })
+
+                     .then(response => response.json())
+                     .then(data => {
+                        document.querySelector('table').innerHTML = '';
+                        var content = ` <tr>
+                     <th>STT</th>                 
+                     <th>Danh mục</th>
+                     <th>Loại Sản Phẩm</th>
+                    
+                     <th>Setting</th>
+                  </tr>`;
+                        data.data.records.forEach(element => {
+                           content += `
+                        <tr id="row-${element.id}">            
+                                                                    
+                                         <td> ${element.id}</td>
+                                         <td> ${element.category}</td>
+                                         <td> ${element.name}</td>
+                                         
+                                         <td>
+                                             <a href="edit.php?id=${element.id}"> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                             <a> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="removeElement(${element.id})"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
+                                         </td>
+                                     </tr>`;
+                        });
+                        document.querySelector('table').innerHTML = content;
+
+                     });
+                     
+                     function removeElement(id){
+                      var removeNode=document.querySelector('#row-'+id);
+                       removeNode.parentNode.removeChild(removeNode);
+                       var removeUrl="http://localhost:8080/api/api/type/delete.php";
+                       fetch(removeUrl,{
+                          method:"DELETE"
+                       })
+                          .then(response=> response.json())
+                          .then(data=>{
+                             console.log(data);
+                          })
+                   
+                   }
+               </script>
+
                <div id="phantrangtype">
              <?php
              $x = "SELECT id FROM `type`";

@@ -117,40 +117,53 @@ require_once __DIR__ . "/../autoload/autoload.php";
                             }
                         
                         }
-                                                      
-
-
-
-
-
-
-
-
-
-                    $sql = "SELECT * FROM `category`";
-                    $category = DataProvider::ExecuteQuery($sql);
-                    while ($loai = mysqli_fetch_array($category)) {
-
-                        $chuoi = <<< EOD
-                          <li><a class="a" href="/TTT/public/pages/show-row.php?id={$loai['id']}">  {$loai['name']}</a>
-                          <ul class="submenu">
-                          EOD;
-                        echo $chuoi;
-
-                        $sql1 = "SELECT * FROM `type` WHERE `category` = {$loai['id']}";
-                        $type = DataProvider::ExecuteQuery("$sql1");
-
-                        while ($type1 = mysqli_fetch_array($type)) {
-                            $chuoi1 = <<< EOD
-                      
-                            <li><a href="/TTT/public/pages/show-row.php?id={$type1['id']}"> {$type1['name']}</a></li>                                                                                  
-                     EOD;
-                            echo $chuoi1;
-                        }
-                        echo " </ul>";
-                    }
-                    echo   "</li>";
-                    ?>
+                      ?>                                 
+            <li class="mn" id="danhmuc">
+                    <ul class="submenu">
+                        <li id="loaisp"></li>
+                        </ul>
+                    </li>
+                    <script>
+                            var requestUrl = 'http://localhost:8080/api/api/category/read.php';
+                            var requestUrl1 = 'http://localhost:8080/api/api/type/read.php';
+                            fetch(requestUrl, {
+                                    method: "get"
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log(data.data.records);
+                                    document.getElementById("danhmuc").innerHTML = '';
+                                    
+                                    var content = ``;
+                                    data.data.records.forEach(element => {
+                                        content += `<a class="a" href="/TTT/public/pages/show-row.php?id=${element.id} "> ${element.name}</a> &#160;`
+                                                       
+                                    });
+                                    document.getElementById("danhmuc").innerHTML = content;
+                                    
+                                });
+                                fetch(requestUrl1, {
+                                    method: "get"
+                                })
+                                .then(response => response1.json())
+                                .then(data => {
+                                    console.log(data.data.records);
+                                    document.getElementById("loaisp").innerHTML = '';
+                    
+                                    var content1 = ``;
+                                    data.data.records.forEach(element1 => {
+                                        if(element1.category == element.id)
+                                        content1 += `<a href="/TTT/public/pages/show-row.php?id=${element1.id} "> ${element1.name}</a>
+                                                `
+                                                       
+                                    });
+                                    document.getElementById("loaisp").innerHTML = content1;
+                                    
+                                });    
+                                
+                    </script>
+                    
+                    
                     <a class="fas fa-shopping-cart " href="gio-hang.php" id="icoi"></a>
                     <?php if (isset($_SESSION['name'])) :   ?>
 

@@ -32,34 +32,55 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         <!-- Begin head  -->
         <nav>
 
-            <a href="#Home"><img class="logo" src="./resources/img/hinh/logo2.png" alt="logo"></a>
+        <a href="#Home"><img class="logo" src="./resources/img/hinh/logo2.png" alt="logo"></a>
             <div>
-                <ul class="main-nav">
-                    <?php
-                    $sql = "SELECT * FROM `category`";
-                    $category = DataProvider::ExecuteQuery($sql);
-                    while ($loai = mysqli_fetch_array($category)) {
+            <ul class="main-nav" >
+                    <li class="mn" id="danhmuc">
+                    <ul class="submenu">
+                        <li id="loaisp"></li>
+                        </ul>
+                    </li>
+                    <script>
+                            var requestUrl = 'http://localhost:8080/api/api/category/read.php';
+                            var requestUrl1 = 'http://localhost:8080/api/type/read.php';
+                            fetch(requestUrl, {
+                                    method: "get"
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log(data.data.records);
+                                    document.getElementById("danhmuc").innerHTML = '';
+                                    
+                                    var content = ``;
+                                    data.data.records.forEach(element => {
+                                        content += `<a class="a" href="/TTT/public/pages/show-row.php?id=${element.id} "> ${element.name}</a> &#160;`
+                                                       
+                                    });
+                                    document.getElementById("danhmuc").innerHTML = content;
+                                    
+                                });
+                                fetch(requestUrl1, {
+                                    method: "get"
+                                })
+                                .then(response => response1.json())
+                                .then(data => {
+                                    console.log(data.data.records);
+                                    document.getElementById("loaisp").innerHTML = '';
+                    
+                                    var content1 = ``;
+                                    data.data.records.forEach(element1 => {
+                                        if(element1.category == element.id)
+                                        content1 += `<a href="/TTT/public/pages/show-row.php?id=${element1.id} "> ${element1.name}</a>
+                                                `
+                                                       
+                                    });
+                                    document.getElementById("loaisp").innerHTML = content1;
+                                    
+                                });    
+                                
+                    </script>
+                    
 
-                        $chuoi = <<< EOD
-                          <li><a class="a" href="/TTT/public/pages/show-row.php?id={$loai['id']}">  {$loai['name']}</a>
-                          <ul class="submenu">
-                          EOD;
-                        echo $chuoi;
-
-                        $sql1 = "SELECT * FROM `type` WHERE `category` = {$loai['id']}";
-                        $type = DataProvider::ExecuteQuery("$sql1");
-
-                        while ($type1 = mysqli_fetch_array($type)) {
-                            $chuoi1 = <<< EOD
-                      
-                            <li><a href="/TTT/public/pages/show-row.php?id={$type1['id']}"> {$type1['name']}</a></li>                                                                                  
-                     EOD;
-                            echo $chuoi1;
-                        }
-                        echo " </ul>";
-                    }
-                    echo   "</li>";
-                    ?>
                     <a class="fas fa-shopping-cart " href="pages/gio-hang.php" id="icoi"></a>
                    <?php if (isset($_SESSION['name'])) :   ?>
 
@@ -83,14 +104,18 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
                     <?php endif ?>
 
                 </ul>
+                
+                         <ul class="submenu"></ul>
+                    </li>
             </div>
             <div class="mobile-nav-icon"><i class="fa fa-bars "></i></div>
         </nav>
+        
 
         <div class="clearfix"> </div>
         <div class="ROW">
             <div class="heading-main-box">
-                
+               
             </div>
         </div>
         <!-- end head -->
@@ -103,15 +128,22 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
             <p class="gioithieu">
             Việc ra đời của Venus Furniture là cả quá trình đúc kết, tìm hiểu về đặc thù của từng loại không gian và các xu hướng sở thích khác nhau từ người sử dụng. 
             Những nghiên cứu kỹ lưỡng đó được kết hợp khéo léo cùng tài năng của các nhà thiết kế nổi tiếng Châu Âu, tạo nên dòng sản phẩm trang trí, đồ nội thất đẹp có độ ứng dụng cao với nhiều loại hình không gian khác nhau. 
-            Gần gũi và ấm cúng cho nhà ở; cởi mở và thời trang cho khách sạn; chuyên nghiệp, năng động khi sử dụng cho văn phòng... 
+            <br>Gần gũi và ấm cúng cho nhà ở; cởi mở và thời trang cho khách sạn; chuyên nghiệp, năng động khi sử dụng cho văn phòng... 
             phong thái từ các thiết kế của Venus Furniture luôn tạo được sức hút bởi tính đa chiều trong cảm xúc mà chúng mang lại cho không gian.
+            Venus Furniture luôn sẵn sàng mang đến những sản phẩm đồ nội thất đẹp giúp bạn tạo ra những không gian sống tiện nghi, 
+            thoải mái .
             </p>
            
         </div>
+        <div id="slider" class="gioithieuimg col span-1_of_2 popup-gallery">
+            <a href="./resources/img/hinh/banghe.jpeg" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hinh/banghe.jpeg" alt="photo" stt="0"></a>
+            <a href="./resources/img/hinh/nen.jpeg" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hinh/nen.jpeg" alt="photo" stt="1" style="display:none"></a>
+            <a href="./resources/img/hinh/nen1.jpeg" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hinh/nen1.jpeg" alt="photo" stt="2" style="display:none"></a>
+            <a href="./resources/img/hinh/nen2.jpeg" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hinh/nen2.jpeg" alt="photo" stt="3" style="display:none"></a>
+            <a href="./resources/img/hinh/nen3.jpeg" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hinh/nen3.jpeg" alt="photo" stt="4" style="display:none"></a>
+            <a href="./resources/img/hinh/nen4.jpeg" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hinh/nen4.jpeg" alt="photo" stt="5" style="display:none"></a>
+            <a href="./resources/img/hinh/nen5.jpeg" title="sản phẩm mới nhất của bộ sưu tập"><img class="slide" src="./resources/img/hinh/nen5.jpeg" alt="photo" stt="6" style="display:none"></a>
 
-
-        <div id="#" class="gioithieuimg col span-1_of_2 popup-gallery">
-            <a href="./resources/img/hinh/banghe.jpeg" title="#"><img class="#" src="./resources/img/hinh/banghe.jpeg" alt="photo"></a>
         </div>
         <!-- kết thúc phần giới thiệu sản phẩm mới -->
     </section>
@@ -141,6 +173,11 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         <!-- Bắt đầu giới thiệu về thương hiệu -->
         <div class="col md-6 popup-gallery ">
             <a href="./resources/img/hinh/bia.jpeg" title="#"><img class="advertisement-section-img" src="./resources/img/hinh/bia.jpeg" alt="photo" st="0"> </a>
+            <a href="./resources/img/hinh/bia1.jpg" title="sản phẩm mới nhất của bộ sưu tập"><img class="advertisement-section-img" src="./resources/img/hinh/bia1.jpg" alt="poto" st="1" style="display:none"> </a>
+            <a href="./resources/img/hinh/bia2.jpg" title="sản phẩm mới nhất của bộ sưu tập"><img class="advertisement-section-img" src="./resources/img/hinh/bia2.jpg" alt="poto" st="2" style="display:none"> </a>
+            <a href="./resources/img/hinh/bia3.jpg" title="sản phẩm mới nhất của bộ sưu tập"><img class="advertisement-section-img" src="./resources/img/hinh/bia3.jpg" alt="poto" st="3" style="display:none"> </a>
+            <a href="./resources/img/hinh/bia4.jpg" title="sản phẩm mới nhất của bộ sưu tập"><img class="advertisement-section-img" src="./resources/img/hinh/bia4.jpg" alt="poto" st="4" style="display:none"> </a>
+            <a href="./resources/img/hinh/bia5.jpg" title="sản phẩm mới nhất của bộ sưu tập"><img class="advertisement-section-img" src="./resources/img/hinh/bia5.jpg" alt="poto" st="5" style="display:none"> </a>
         
 
         </div>
@@ -148,14 +185,13 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         <div class="noidung col md-6 ">
             <p class="tieude2">Không Gian Sống...<br></p>
             <p class="modau">Tất cả những gì cần cho ngôi nhà của bạn</p>
-            <p class="gioithieu2 ">
+            <p class="gioithieu ">
             Đất nước Đan Mạch ghi dấu trong mọi lĩnh vực từ nghệ thuật, kiến trúc, khoa học công nghệ, bề dày lịch sử cho đến phúc lợi xã hội. 
             Những thành tựu đó đã tạo nên nền tảng vững chắc để đảm bảo cho nhịp sống thanh bình, biết trân trọng các giá trị chân thực và luôn sáng tạo để mang đến những điều tốt đẹp cho cuộc sống. 
             Đặc biệt hơn nữa, yếu tố tinh thần này luôn thể hiện rõ nét trong từng góc sống, từng tổ ấm của người dân nơi đây.
             <br>Với tình yêu đặc biệt dành cho nội thất, đến với Venus Furniture là đến với một tinh thần Đan Mạch chân thực, đồng thời trải nghiệm về các không gian sống mang đậm chất Bắc Âu phóng khoáng mà đơn giản, tối giản mà hữu dụng.
             Hãy để chúng tôi đồng hành cùng bạn tạo nên một không gian sống chứa đựng những ký ức tuyệt vời nhất.
-            <br> Venus Furniture luôn sẵn sàng mang đến những sản phẩm đồ nội thất đẹp giúp bạn tạo ra những không gian sống tiện nghi, 
-            thoải mái và giúp bạn thực sự thư giãn mỗi khi quay trở về nhà
+            <br> 
             </p>
         </div>
         <!-- Kết thúc giới thiệu thương hiệu -->
@@ -163,17 +199,37 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
     <section class="products-section container-fluid">
     <div class="row colum">
             <div class="col span_1_of_4 about-picture">
-                <h4>thwrhww</h4>
-            </div>
-            <div class="col span_1_of_4 about-picture">
-                <h4>ABOUT US</h4>
                 
+               
+                
+                <h4 class="tieude3" style="text-align:center">VỀ CHÚNG TÔI</h4>
+                <p class="gioithieu " >Venus Furniture cung cấp đồ nội thất đặt làm chất lượng cao cấp nhằm tôn vinh 
+                    và phản ánh nét độc đáo của các khách sạn nổi tiếng trên toàn thế giới.</p>
+                    <img class ="anh" src="./resources/img/hinh/vechungtoi.jpg">
+                    
             </div>
             <div class="col span_1_of_4 about-picture">
-                <h4>rrrrrrrrrrrrrrrrrrr</h4>
+            
+                <h4 class="tieude3" style="text-align:center">DỰ ÁN</h4>
+                <p p class="gioithieu ">Venus Furniture tự hào về đồ nội thất mà chúng tôi sản xuất cũng như đối với những khách sạn mà chúng tôi làm việc. 
+                    Từ dịch vụ đầy đủ đến bất động sản sang trọng, kinh nghiệm của chúng tôi bao gồm các dự án từ 25 đến 4.000 phòng.</p>
+                    <img class ="anh" src="./resources/img/hinh/quatrinh.jpg">
             </div>
             <div class="col span_1_of_4 about-picture">
-                <h4>rrrrrrrrrrrrwjj</h4>
+                
+                <h4 class="tieude3" style="text-align:center">QUÁ TRÌNH</h4>
+                <p p class="gioithieu ">Hệ thống của Fleetwood và đội ngũ nhân viên giàu kinh nghiệm mang đến cho 
+                    khách hàng sự đảm bảo rằng các dự án của họ sẽ được xử lý liền mạch và chuyên nghiệp, 
+                    hoàn thành các mục tiêu thiết kế của họ.</p>
+                    <img class ="anh" src="./resources/img/hinh/duan.jpg">
+            </div>
+            <div class="col span_1_of_4 about-picture">
+            
+                <h4 class="tieude3" style="text-align:center">CATALOGUE</h4>
+                <p p class="gioithieu ">Với tình yêu đặc biệt dành cho nội thất, đến với AConcept là đến với một tinh thần Đan Mạch chân thực, 
+                    đồng thời trải nghiệm về các không gian sống mang đậm chất Bắc Âu phóng khoáng mà đơn giản, tối giản mà hữu dụng. 
+                    </p>
+                    <img class ="anh" src="./resources/img/hinh/catoluge.jpg">
             </div>
             
         </div>
@@ -295,5 +351,3 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
 </html>
 
 
-
-<!-- demo  -->
