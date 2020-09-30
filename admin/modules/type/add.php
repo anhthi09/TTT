@@ -64,7 +64,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                     contentType: 'application/json; charset=utf-8',
                                     dataType: 'json',
                                     success: function(data) {
-                                        if (data == "no_errors") window.location.href = 'TTT/admin/modules/type/index.php';
+                                        if (data == "no_errors") window.location.href = 'http://localhost:8080/TTT/admin/modules/type/index.php';
                                     }
                                 })
                             }

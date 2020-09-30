@@ -36,13 +36,11 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
             <div>
             <ul class="main-nav" >
                     <li class="mn" id="danhmuc">
-                    <ul class="submenu">
-                        <li id="loaisp"></li>
-                        </ul>
+                        
                     </li>
                     <script>
-                            var requestUrl = 'http://localhost:8080/api/api/category/read.php';
-                            var requestUrl1 = 'http://localhost:8080/api/type/read.php';
+                            var requestUrl = 'http://localhost:8080/api/api/type/read.php';
+                            
                             fetch(requestUrl, {
                                     method: "get"
                                 })
@@ -53,30 +51,19 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
                                     
                                     var content = ``;
                                     data.data.records.forEach(element => {
-                                        content += `<a class="a" href="/TTT/public/pages/show-row.php?id=${element.id} "> ${element.name}</a> &#160;`
+                                        content += `<a class="a" href="/TTT/public/pages/show-row.php?id=${element.category} "> </a> &#160;
+        
+                                        <ul class="submenu">
+                                        <li><a href="/TTT/public/pages/show-row.php?id=${element.id}"> ${element.name}</a></li>
+                                        </ul>
+                                        </li>
+                                        `
                                                        
                                     });
                                     document.getElementById("danhmuc").innerHTML = content;
                                     
                                 });
-                                fetch(requestUrl1, {
-                                    method: "get"
-                                })
-                                .then(response => response1.json())
-                                .then(data => {
-                                    console.log(data.data.records);
-                                    document.getElementById("loaisp").innerHTML = '';
-                    
-                                    var content1 = ``;
-                                    data.data.records.forEach(element1 => {
-                                        if(element1.category == element.id)
-                                        content1 += `<a href="/TTT/public/pages/show-row.php?id=${element1.id} "> ${element1.name}</a>
-                                                `
-                                                       
-                                    });
-                                    document.getElementById("loaisp").innerHTML = content1;
-                                    
-                                });    
+                                
                                 
                     </script>
                     

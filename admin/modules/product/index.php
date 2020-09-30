@@ -42,7 +42,7 @@ if (isset($_GET["trang"])) {
                      <th>Tên Sản Phẩm</th>
                      <th>Số Lượng</th>
                      <th>Giá bán</th>
-                     <th>Ngày thêm</th>
+                     <th>Ngày Thêm</th>
                      <th>Ngày Sửa</th>
                      <th>Setting</th>
                   </tr>`;
@@ -59,7 +59,7 @@ if (isset($_GET["trang"])) {
                                          <td> ${element.updated_at}</td>
                                          <td>
                                              <a href="edit.php?id=${element.id}"> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                             <a> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="removeElement(${element.id})"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
+                                             <a> <button  data-id_xoa=${element.id} data-toggle="tooltip" title="Trash" class="pd-setting-ed delete " ><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
                                          </td>
                                      </tr>`;
                         });
@@ -67,19 +67,26 @@ if (isset($_GET["trang"])) {
 
                      });
                      
-                     function removeElement(id){
-                      var removeNode=document.querySelector('#row-'+id);
-                       removeNode.parentNode.removeChild(removeNode);
-                       var removeUrl="http://localhost:8080/api/api/product/delete.php";
-                       fetch(removeUrl,{
-                          method:"DELETE"
-                       })
-                          .then(response=> response.json())
-                          .then(data=>{
-                             console.log(data);
-                          })
-                   
-                   }
+                     //DELETE
+                     $(document).on('click', '.delete', function() {
+                     var id = $(this).data('id_xoa');
+                     const bla = {
+                        id: id
+                     }
+                     $.ajax({
+                        url: 'http://localhost:8080/api/api/product/delete.php',
+                        method: "POST",
+                        data: JSON.stringify(bla),
+                        crossDomain: true,
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        success: function(data) {
+                           alert('Xóa dữ liệu thành công');
+                           window.location = 'http://localhost:8080/TTT/admin/modules/product/index.php';
+                           // fetch_data();
+                        }
+                     })
+                  })
                </script>
                <div id="phantrangproduct">
                   <?php
