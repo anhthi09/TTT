@@ -31,43 +31,34 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
     <header id="Home">
         <!-- Begin head  -->
         <nav>
-
         <a href="#Home"><img class="logo" src="./resources/img/hinh/logo2.png" alt="logo"></a>
             <div>
             <ul class="main-nav" >
-                    <li class="mn" id="danhmuc">
-                        
-                    </li>
-                    <script>
-                            var requestUrl = 'http://localhost:8080/api/api/type/read.php';
-                            
+                <li id="danhmuc"></li>
+                <script>
+                            var requestUrl = 'http://localhost:8080/api/api/category/read.php';
                             fetch(requestUrl, {
                                     method: "get"
                                 })
                                 .then(response => response.json())
                                 .then(data => {
                                     console.log(data.data.records);
-                                    document.getElementById("danhmuc").innerHTML = '';
-                                    
+                                    document.querySelector("li").innerHTML = '';
                                     var content = ``;
                                     data.data.records.forEach(element => {
-                                        content += `<a class="a" href="/TTT/public/pages/show-row.php?id=${element.category} "> </a> &#160;
-        
-                                        <ul class="submenu">
-                                        <li><a href="/TTT/public/pages/show-row.php?id=${element.id}"> ${element.name}</a></li>
-                                        </ul>
-                                        </li>
-                                        `
-                                                       
+                                        content += `<a class="a" id="get" data-id_doc=${element.id}  href="/TTT/public/pages/show-row.php?id=${element.id} ">${element.name}</a>&#160
+                                        <ul class="submenu"> </ul>`;
                                     });
-                                    document.getElementById("danhmuc").innerHTML = content;
-                                    
+                                    document.querySelector("li").innerHTML = content;
                                 });
-                                
-                                
-                    </script>
-                    
-
+                             
+                              
+                 
+                    // console.log(id);
+                   
+                             
+        </script>
+                  
                     <a class="fas fa-shopping-cart " href="pages/gio-hang.php" id="icoi"></a>
                    <?php if (isset($_SESSION['name'])) :   ?>
 
@@ -81,7 +72,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
                                 <a class="dropdown-item" href="pages/ho-so.php">Hồ sơ</a>
                                
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/TTT/public/pages/thoat.php">Đăng xuất</a>
+                                <a class="dropdown-item" href="/DoAnWeb2020/public/pages/thoat.php">Đăng xuất</a>
                             </div>
                         </div>
                     <?php else : ?>
@@ -91,13 +82,10 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
                     <?php endif ?>
 
                 </ul>
-                
-                         <ul class="submenu"></ul>
-                    </li>
             </div>
             <div class="mobile-nav-icon"><i class="fa fa-bars "></i></div>
         </nav>
-        
+
 
         <div class="clearfix"> </div>
         <div class="ROW">
@@ -336,5 +324,3 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
 </body>
 
 </html>
-
-

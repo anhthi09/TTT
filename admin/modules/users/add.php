@@ -19,31 +19,31 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                 <form id="formAdd1" onsubmit="addUsers(this)">
                         <div class="form-group">
                             <label>Tên Người Dùng</label>
-                            <input type="text" class="form-control" placeholder="Nhập Tên Người Dùng" name="name">
+                            <input type="text" class="form-control" placeholder="Nhập Tên Người Dùng" name="name" id="name">
                         </div>
                         <div class="form-group">
                             <label>Địa Chỉ</label>
-                            <input type="text" class="form-control" placeholder="64 Hoàng Hoa Thám" name="address">
+                            <input type="text" class="form-control" placeholder="64 Hoàng Hoa Thám" name="address" id="address">
                         </div>
                         <div class="form-group">
                             <label>Số Điện Thoại</label>
-                            <input type="number" class="form-control" placeholder="Nhập số điện thoại" name="phone">
+                            <input type="number" class="form-control" placeholder="Nhập số điện thoại" name="phone" id="phone">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" placeholder="ABC@gmail.com" name="email">
+                            <input type="email" class="form-control" placeholder="ABC@gmail.com" name="email" id="email">
                         </div>
                         <div class="form-group">
                             <label>Tên Đăng Nhập</label>
-                            <input type="text" class="form-control" placeholder="NguyenVanA" name="Account">
+                            <input type="text" class="form-control" placeholder="NguyenVanA" name="Account" id="Account">
                         </div>
                         <div class="form-group">   
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password từ 8 kí tự" name="password">
+                            <input type="password" class="form-control" placeholder="Password từ 8 kí tự" name="password" id="password">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Ảnh Đại Diện</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="avatar">
+                            <input type="file" class="form-control-file" id="avatar" name="avatar">
                         </div>
                         
                         <button type="submit" class="btn btn-primary">Submit</button>

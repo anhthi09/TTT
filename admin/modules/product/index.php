@@ -49,7 +49,7 @@ if (isset($_GET["trang"])) {
                         data.data.records.forEach(element => {
                            content += `
                         <tr id="row-${element.id}">            
-                                         <td><img src="img_product/"${element.avatar} ></img></td>                           
+                                         <td><img src="img_product/${element.avatar}" ></img></td>                           
                                          <td> ${element.category}</td>
                                          <td> ${element.type_name}</td>
                                          <td> ${element.name}</td>

@@ -38,8 +38,8 @@ if( !isset ($_SESSION['namead']) ){
                      <th>Mã Đơn Hàng</th>
                      <th>Tên Khách Hàng</th>
                      <th>Tổng Tiền</th>
+                     <th>Nội Dung</th>
                      <th>Ngày Đặt</th>
-                     <th>Trạng Thái</th>
                      <th>Setting</th>
                   </tr>`;
                         data.data.records.forEach(element => {

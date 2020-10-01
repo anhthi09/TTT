@@ -47,12 +47,13 @@ require_once __DIR__ . "/../../autoload/autoload.php";
         <div class="san_pham row" id="spp">
         </div>
         <script>
-            var requestUrl = 'http://localhost:8080/api/product/read.php';
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            var requestUrl = 'http://localhost:8080/api/api/product/read_category.php/?category=' + id;
             fetch(requestUrl, {
-                    method: "get"
+                    method: "get",
+                    data: id
                 })
-
-                
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById("spp").innerHTML = '';
@@ -61,7 +62,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                         content += `
                 <div class="khung_san_pham col-4">
                                   <div class="Hinh_anhsp">
-                                      <a href=" xem-hang.php?id= ${element.id}"><img src="/TTT/admin/modules/product/img_product/ ${element.avatar}"  alt="poto"></a>
+                                      <a href=" xem-hang.php?id= ${element.id}"><img src="/TTT/admin/modules/product/img_product/${element.avatar}"  alt="poto"></a>
                                   </div>
                                   <div class="ten_sp">
                                       <p> ${element.name}</p>
@@ -72,8 +73,6 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                   </div>`;
                     });
                     document.getElementById("spp").innerHTML = content;
-
-
                 });
         </script>
         <div class="clearfix"></div>
