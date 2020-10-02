@@ -33,7 +33,7 @@ if( isset($_GET["trang"]) ){
                   
                </table>
                <script>
-                  var requestUrl = 'http://localhost:8080/api/api/type/read.php?category=1';
+                  var requestUrl = 'http://localhost:8080/api/api/type/read.php';
                   fetch(requestUrl, {
                         method: "get"
                      })
@@ -73,7 +73,7 @@ if( isset($_GET["trang"]) ){
                         id: id
                      }
                      $.ajax({
-                        url: 'http://localhost:8080/api/api/type/delete.php?category=1',
+                        url: 'http://localhost:8080/api/api/type/delete.php',
                         method: "POST",
                         data: JSON.stringify(bla),
                         crossDomain: true,

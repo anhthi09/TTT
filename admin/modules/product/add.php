@@ -44,7 +44,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                 <select class="form-control form-control-lg" name="type" id="type">
                                 </select>
                                 <script>
-                                    var requestUrl = 'http://localhost:8080/api/api/product/read.php';
+                                    var requestUrl = 'http://localhost:8080/api/api/type/read.php';
                                     fetch(requestUrl, {
                                             method: "get"
                                         })
@@ -53,7 +53,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                             document.getElementById("type").innerHTML = '';
                                             var content = ``;
                                             data.data.records.forEach(element => {
-                                                content += ` <option value='${element.type}'> ${element.type_name} </option>`;
+                                                content += ` <option value='${element.id}'> ${element.name} </option>`;
                                             });
                                             document.getElementById("type").innerHTML = content;
 
@@ -76,11 +76,11 @@ require_once __DIR__ . "/../../autoload/autoload.php";
 
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Ảnh</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="avatar" id="avatar">
+                                <input type="file" class="form-control-file"  name="avatar" id="avatar">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Mô Tả Sản Phẩm</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="content" id="content"></textarea>
+                                <textarea class="form-control"  rows="5" name="content" id="content"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 

@@ -50,7 +50,7 @@ if (isset($_GET["trang"])) {
                            content += `
                         <tr id="row-${element.id}">            
                                          <td><img src="img_product/${element.avatar}" ></img></td>                           
-                                         <td> ${element.category}</td>
+                                         <td> ${element.cate_name}</td>
                                          <td> ${element.type_name}</td>
                                          <td> ${element.name}</td>
                                          <td> ${element.soluong} </td>
@@ -59,7 +59,7 @@ if (isset($_GET["trang"])) {
                                          <td> ${element.updated_at}</td>
                                          <td>
                                              <a href="edit.php?id=${element.id}"> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                             <a> <button  data-id_xoa=${element.id} data-toggle="tooltip" title="Trash" class="pd-setting-ed delete " ><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
+                                             <a > <button  data-id_xoa=${element.id} data-toggle="tooltip" title="Trash" class="pd-setting-ed  delete"><i class="fa fa-trash-o" aria-hidden="true"> </i> </button> </a>
                                          </td>
                                      </tr>`;
                         });
@@ -73,6 +73,7 @@ if (isset($_GET["trang"])) {
                      const bla = {
                         id: id
                      }
+                     console.log(id);
                      $.ajax({
                         url: 'http://localhost:8080/api/api/product/delete.php',
                         method: "POST",

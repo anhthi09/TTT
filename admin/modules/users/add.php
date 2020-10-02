@@ -70,7 +70,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                 };
                                 $.ajax({
                                     type: 'POST',
-                                    url: 'http://localhost:8080/api/api/user/create_user.php',
+                                    url: 'http://localhost:8080/api/api/user/create.php',
                                     crossDomain: true,
                                     data: JSON.stringify(requestObj),
                                     contentType: 'application/json; charset=utf-8',

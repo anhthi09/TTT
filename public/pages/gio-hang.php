@@ -41,10 +41,10 @@ if( !isset ($_SESSION['cart']) ){
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price"> <?php echo number_format( $value['gia']-$value['sale']*$value['gia']/100,0) ?> VNĐ</td>
+                    <td data-th="Price"> <?php echo number_format( $value['gia'],0) ?> VNĐ</td>
                     <td data-th="Quantity"><input class="form-control text-center qty" value="<?php echo $value['soluong'] ?>" type="number" name="qty" min="0" id="qty">
                     </td>
-                    <?php $gia= ($value['gia']-$value['sale']*$value['gia']/100) ?>
+                    <?php $gia= ($value['gia']) ?>
                     <td data-th="Subtotal" class="text-center"><?php echo number_format($gia*$value['soluong'],0)?> VNĐ</td>
                     <?php $tong+=$gia*$value['soluong']?>
                     <td class="actions" data-th="">
