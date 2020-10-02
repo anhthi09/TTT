@@ -1,18 +1,18 @@
 <?php session_start(); ?>
-<?php// require_once __DIR__ . "/../../autoload/autoload.php"; ?>
+<?php require_once __DIR__ . "/../../autoload/autoload.php"; ?>
 <?php require_once __DIR__ . "/../../layouts/header.php" ?>
-<?php
-// $sotin1trang = 10;
-// if (!isset($_SESSION['namead'])) {
-//    echo "<script> alert ('Bạn phải là admin để sử dụng chức năng này. Hãy đăng nhập để tiếp tục nhé'); 
-//    location.href='/TTT/admin/modules/'</script> ";
-// }
-// if (isset($_GET["trang"])) {
-//    $trang = $_GET["trang"];
-//    settype($trang, "int");
-// } else {
-//    $trang = 1;
-// }
+<?php 
+$sotin1trang = 10; 
+if( !isset ($_SESSION['namead']) ){
+   echo "<script> alert ('Bạn phải là admin để sử dụng chức năng này. Hãy đăng nhập để tiếp tục nhé'); 
+   location.href='/TTT/admin/modules/'</script> ";}
+if( isset($_GET["trang"]) ){
+	$trang = $_GET["trang"];
+	settype($trang, "int");
+}else{
+	$trang = 1;	
+
+}
 ?>
 <div class="product-status mg-tb-15">
    <div class="container-fluid">
@@ -49,7 +49,7 @@
                         data.data.records.forEach(element => {
                            content += 
                        ` <tr id="row-${element.id}">            
-                                         <td><img src="http://localhost:8080/api/api/assets/${element.avatar}" ></img></td>                           
+                                         <td><img src="img_product/${element.avatar}" ></img></td>                           
                                          <td> ${element.cate_name}</td>
                                          <td> ${element.type_name}</td>
                                          <td> ${element.name}</td>
@@ -90,26 +90,27 @@
                   })
                </script>
                <div id="phantrangproduct">
-                  <?php
-                  // $x = "SELECT id FROM `product`";
-                  // $kq = DataProvider::ExecuteQuery($x);
-                  // $tongsotin = mysqli_num_rows($kq);
-                  // $sotrang = ceil($tongsotin / $sotin1trang);
+               <?php
+             $x = "SELECT id FROM `product`";
+             $kq = DataProvider::ExecuteQuery($x);
+             $tongsotin = mysqli_num_rows($kq);
+             $sotrang = ceil($tongsotin / $sotin1trang);
 
-                  // if ($trang > 1 && $sotrang > 1) {
-                  //    echo '<a href="index.php?trang=' . ($trang - 1) . '"> Prev</a> | ';
-                  // }
-                  // for ($i = 1; $i <= $sotrang; $i++) {
-                  //    if ($i == $trang) {
-                  //       echo '<span>' . $i . '</span> | ';
-                  //    } else {
-                  //       echo '<a href="index.php?trang=' . $i . '">' . $i . '</a> | ';
-                  //    }
-                  // }
-                  // if ($trang < $sotrang && $sotrang > 1) {
-                  //    echo '<a href="index.php?trang=' . ($trang + 1) . '">Next</a>  ';
-                  // }
-                  ?>
+               if ($trang > 1 && $sotrang > 1){
+               echo '<a href="index.php?trang='.($trang-1).'"> Prev</a> | ';
+               }
+               for ($i = 1; $i <= $sotrang; $i++){
+               if ($i == $trang){
+               echo '<span>'.$i.'</span> | ';
+               }
+               else{
+               echo '<a href="index.php?trang='.$i.'">'.$i.'</a> | ';
+               }
+               }
+               if ($trang < $sotrang && $sotrang > 1){
+               echo '<a href="index.php?trang='.($trang+1).'">Next</a>  ';
+               }
+          ?>
                </div>
                <style>
                   #phantrangproduct {

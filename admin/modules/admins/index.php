@@ -28,16 +28,16 @@
                      <th>Tên Admin</th>
                      <th>Địa Chỉ</th>
                      <th>Email</th>
-                     <th>password</th>
+                     <th>Password</th>
                      <th>Phone</th>
                      <th>Ngày Tạo</th>
                      <th>Ngày Sửa</th>
                      <th>Setting</th>
                   </tr>`;
                      data.data.records.forEach(element => {
-                     content += `tr>
+                     content += `<tr>
                      <td>${element.id}</td>
-                     <td>${element.avatar}</td>
+                     <td><img src="img_admins/${element.avatar}"</td>
                      <td>${element.name}</td>
                      <td>${element.address}</td>
                      <td>${element.email}</td>

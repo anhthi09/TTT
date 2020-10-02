@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group">
                             <label>Địa Chỉ Giao</label>
-                            <input readonly="" type="text" class="form-control" placeholder="351 Lạc Long Quân" name="address" value="<?php echo $row2['address'] ?>">
+                            <input readonly="" type="text" class="form-control" placeholder="351 Lạc Long Quân-Phường 4- Quận 5- Thành Phố Hồ Chí Minh" name="address" value="<?php echo $row2['address'] ?>">
                         </div>
                         <div class="form-group">
                             <label>Số Điện Thoại</label>

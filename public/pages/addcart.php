@@ -2,7 +2,7 @@
 session_start ();
 require_once __DIR__ . "/../../autoload/autoload.php"; 
 if (!isset ($_SESSION['name'])){
-    echo "<script>alert ('Bạn chưa đăng kí tài khoảng. vui lòng đăng kí tài khoảng để tiếp tục mua hàng'); 
+    echo "<script>alert ('Bạn chưa đăng kí tài khoản. vui lòng đăng kí tài khoảng để tiếp tục mua hàng'); 
     location.href='xem-hang.php'
     
     </script> ";  

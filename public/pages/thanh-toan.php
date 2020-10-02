@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $soluong= $value['soluong'];
         $gia=$value['gia'];
         $sql = "INSERT INTO `orders` (`id`, `transaction_id`, `product_id`, `soluong`, `gia`,`created_at`) 
-        VALUES (NULL, '$transaction_id', '$ptoduct_id', '$soluong', '$gia', current_timestamp())";
+        VALUES (NULL, '$transaction_id', '$ptoduct_id', '$soluong', '$gia', '$sale', current_timestamp())";
        
         DataProvider::ExecuteQuery($sql);
     }
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="product-status-wrap">
-                    <h2 class="text-center">Thanh Toán Đơn Hàng </h2>
+                    <h2 class="text-center" style="font-family: 'Pacifico'">Thanh Toán Đơn Hàng </h2>
                     <!-- Begin form add product -->
                     <form action="" method="post" enctype="multipart/form-data" id="USedit">
                         <?php
@@ -98,7 +98,7 @@ label.error{
   font-family: "Dancing Script", cursive;
   font-size: xx-large;
   letter-spacing: 8px;
-  color: brown;
+  color: red;
 }
     </style>
 <?php

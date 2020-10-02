@@ -12,28 +12,44 @@
             <div class="product-status-wrap">
                <h4>Sửa Danh Mục Sản Phẩm</h4>
                <form action="" method="post" enctype="multipart/form-data">
-                  <div class="row">
-                     <div class="col-lg-8">
-                        <?php
-                           // try {
-                           //     $sql = "SELECT name FROM category";
-                           //     if (isset($_GET['id'])) {
-                           //         $id = $_GET['id'];
-                           //         $sql .= " WHERE id = " . $id;
-                           //     }
-                           //     $result = DataProvider::ExecuteQuery($sql);
-                           //     $row = mysqli_fetch_array($result);
-                           // } catch (Exception $ex) {
-                           //     echo "Không thể mở CSDL";
-                           // }
-                           ?>
-                        <input type="text" class="form-control" placeholder="Tên danh mục mới" name="tendanhmuc" <?php echo "value='{$row['name']}'" ?>>
-                     </div>
-                     <div class="col-lg-4">
+                  <div class="row" >
+                  <div class="col-lg-8" id="fff"> </div>
+                  <script>
+                  const urlParams = new URLSearchParams(window.location.search);
+                  const id = urlParams.get('id');
+                  var requestUrl = 'http://localhost:8080/api/api/category/read_one.php?id='+id;
+
+                  fetch(requestUrl, {
+                        method: "get"
+                     })
+                     .then(response => response.json())
+                     .then(data => {
+                        document.getElementById("fff").innerHTML = '';
+                        var content = ``;
+                        data.data.forEach(element => {
+                           content += `<input type="text" class="form-control" placeholder="Tên danh mục mới" name="tendanhmuc"  value='${element.name}'  />
+                     
+                  `;
+                        });
+
+                        document.getElementById("fff").innerHTML = content;
+                     });
+                     console.log(data);
+               </script>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="col-lg-4">
                         <input class="btn btn-primary" type="submit" value="Submit">
-                     </div>
                   </div>
+                  </div>
+                  
                </form>
+               
             </div>
          </div>
       </div>
