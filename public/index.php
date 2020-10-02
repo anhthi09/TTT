@@ -31,7 +31,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
     <header id="Home">
         <!-- Begin head  -->
         <nav>
-        <a href="#Home"><img class="logo" src="./resources/img/hinh/logo2.png" alt="logo"></a>
+        <a href="#Home"><img class="logo" src="./resources/img/hinh/logo3.png" alt="logo"></a>
             <div>
             <ul class="main-nav" >
                 <li id="danhmuc"></li>
@@ -46,7 +46,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
                                     document.querySelector("li").innerHTML = '';
                                     var content = ``;
                                     data.data.records.forEach(element => {
-                                        content += `<a class="a" id="get" data-id_doc=${element.id}  href="/TTT/public/pages/show-row.php?id=${element.id} ">${element.name}</a>&#160
+                                        content += `<a class="a" id="get" data-id_doc=${element.id}  href="/TTT/public/pages/show-row.php?id=${element.id} ">${element.name}</a>&#160 &#160
                                         <ul class="submenu"> </ul>`;
                                     });
                                     document.querySelector("li").innerHTML = content;
@@ -95,7 +95,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         </div>
         <!-- end head -->
     </header>
-    <section class="About-section row ">
+    <section class="About-section row " id="khunghinh4">
         <!-- Bắt đầu phần giới thiệu sản phẩm mới -->
         <div class="bosuutap col span_1_of_2 ">
            
@@ -123,22 +123,22 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         <!-- kết thúc phần giới thiệu sản phẩm mới -->
     </section>
 
-    <section class="products-section container-fluid">
-    <div class="row colum">
+    <section class="products-section container-fluid" >
+    <div class="row colum" >
             <div class="col span_1_of_4 about-picture">
-                <img src="./resources/img/hinh/Sofa.jpeg" alt="activities1">
-                <p class="picture-title"> Sofa</p>
+                <img src="./resources/img/hinh/sofa1.jpeg" alt="activities1">
+                <p class="picture-title">Sofa</p>
             </div>
             <div class="col span_1_of_4 about-picture">
-                <img src="./resources/img/hinh/Ghế.jpeg" alt="activities2">
+                <img src="./resources/img/hinh/ghe1.jpeg" alt="activities2">
                 <p class="picture-title">Ghế</p>
             </div>
             <div class="col span_1_of_4 about-picture">
-                <img src="./resources/img/hinh/Bàn.jpeg" alt="activities3">
+                <img src="./resources/img/hinh/ban1.jpeg" alt="activities3">
                 <p class="picture-title">Bàn</p>
             </div>
             <div class="col span_1_of_4 about-picture">
-                <img src="./resources/img/hinh/Giường.jpeg" alt="activities4">
+                <img src="./resources/img/hinh/giuong1.jpeg" alt="activities4">
                 <p class="picture-title">Giường</p>
             </div>
         </div>
@@ -158,53 +158,57 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
         </div>
 
         <div class="noidung col md-6 ">
-            <p class="tieude2">Không Gian Sống...<br></p>
-            <p class="modau">Tất cả những gì cần cho ngôi nhà của bạn</p>
-            <p class="gioithieu ">
+            <p class="tieude2">LOVE YOUR HOME <br> &#160 &#160 &#160 &#160 LOVE YOURSELF...<br></p>
+            <p class="modau">" Mỗi ngôi nhà thể hiện phong cách sống " </p>
+            <p class="gioithieu1 ">
             Đất nước Đan Mạch ghi dấu trong mọi lĩnh vực từ nghệ thuật, kiến trúc, khoa học công nghệ, bề dày lịch sử cho đến phúc lợi xã hội. 
             Những thành tựu đó đã tạo nên nền tảng vững chắc để đảm bảo cho nhịp sống thanh bình, biết trân trọng các giá trị chân thực và luôn sáng tạo để mang đến những điều tốt đẹp cho cuộc sống. 
             Đặc biệt hơn nữa, yếu tố tinh thần này luôn thể hiện rõ nét trong từng góc sống, từng tổ ấm của người dân nơi đây.
-            <br>Với tình yêu đặc biệt dành cho nội thất, đến với Venus Furniture là đến với một tinh thần Đan Mạch chân thực, đồng thời trải nghiệm về các không gian sống mang đậm chất Bắc Âu phóng khoáng mà đơn giản, tối giản mà hữu dụng.
-            Hãy để chúng tôi đồng hành cùng bạn tạo nên một không gian sống chứa đựng những ký ức tuyệt vời nhất.
+            <br>Với tình yêu đặc biệt dành cho nội thất, đến với Venus Furniture là đến với một tinh thần Đan Mạch chân thực, đồng thời trải nghiệm về 
+            các không gian sống mang đậm chất Bắc Âu phóng khoáng mà đơn giản
             <br> 
             </p>
         </div>
         <!-- Kết thúc giới thiệu thương hiệu -->
     </section>
-    <section class="products-section container-fluid">
+    <section class="products-section container-fluid" id="khunghinh3" >
     <div class="row colum">
             <div class="col span_1_of_4 about-picture">
                 
-               
-                
+                <img class ="anh" id="hinh4" src="./resources/img/hinh/aboutus.png">
                 <h4 class="tieude3" style="text-align:center">VỀ CHÚNG TÔI</h4>
                 <p class="gioithieu " >Venus Furniture cung cấp đồ nội thất đặt làm chất lượng cao cấp nhằm tôn vinh 
                     và phản ánh nét độc đáo của các khách sạn nổi tiếng trên toàn thế giới.</p>
-                    <img class ="anh" src="./resources/img/hinh/vechungtoi.jpg">
-                    
+                   
             </div>
             <div class="col span_1_of_4 about-picture">
-            
+                
+                <img class ="anh" id="hinh4" src="./resources/img/hinh/duan1.png">
+                 
                 <h4 class="tieude3" style="text-align:center">DỰ ÁN</h4>
                 <p p class="gioithieu ">Venus Furniture tự hào về đồ nội thất mà chúng tôi sản xuất cũng như đối với những khách sạn mà chúng tôi làm việc. 
                     Từ dịch vụ đầy đủ đến bất động sản sang trọng, kinh nghiệm của chúng tôi bao gồm các dự án từ 25 đến 4.000 phòng.</p>
-                    <img class ="anh" src="./resources/img/hinh/quatrinh.jpg">
+                    
             </div>
             <div class="col span_1_of_4 about-picture">
+               
+                    <img class ="anh" id="hinh4" src="./resources/img/hinh/duan.jpg">
                 
                 <h4 class="tieude3" style="text-align:center">QUÁ TRÌNH</h4>
                 <p p class="gioithieu ">Hệ thống của Fleetwood và đội ngũ nhân viên giàu kinh nghiệm mang đến cho 
                     khách hàng sự đảm bảo rằng các dự án của họ sẽ được xử lý liền mạch và chuyên nghiệp, 
                     hoàn thành các mục tiêu thiết kế của họ.</p>
-                    <img class ="anh" src="./resources/img/hinh/duan.jpg">
+                    
             </div>
             <div class="col span_1_of_4 about-picture">
-            
+                
+                    <img class ="anh" id="hinh4" src="./resources/img/hinh/catoluge.jpg">
+               
                 <h4 class="tieude3" style="text-align:center">CATALOGUE</h4>
                 <p p class="gioithieu ">Với tình yêu đặc biệt dành cho nội thất, đến với AConcept là đến với một tinh thần Đan Mạch chân thực, 
                     đồng thời trải nghiệm về các không gian sống mang đậm chất Bắc Âu phóng khoáng mà đơn giản, tối giản mà hữu dụng. 
                     </p>
-                    <img class ="anh" src="./resources/img/hinh/catoluge.jpg">
+                    
             </div>
             
         </div>

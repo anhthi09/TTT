@@ -56,12 +56,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
     <!-- preloader area end -->
     <!-- login area start -->
     <div class="login-area login-s2">
+       
         <div class="container">
             <div class="login-box ptb--100">
                 <form action="" method="post" enctype="multipart/form-data" id="USadd">
                     <div class="login-form-head">
-                        <h4>Sign In</h4>
-                        <p>Hello there, Sign in and start managing your Admin Template</p>
+                        <h4 style="font-size:40px ;color:rgb(214, 93, 37)">ĐĂNG NHẬP</h4>
+                        <p style="letter-spacing: 2px;">Chào Mừng bạn đến với Venus Furniture,<br><br> Mời bạn đăng nhập để mua sắm</p>
                     </div>
                   
                     <?php if (isset($_SESSION['error'])):  ?>
@@ -72,13 +73,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 
                     <div class="login-form-body">
                         <div class="form-gp">
-                            <label for="exampleInputEmail1">Account</label>
+                            <label for="exampleInputEmail1">Tài Khoản *</label>
                             <input type="text" id="exampleInputEmail1" name="account" required minlength="3">
                             <i class="ti-email"></i>
                             <div class="text-danger"></div>
                         </div>
                         <div class="form-gp">
-                            <label for="exampleInputPassword1">Password</label>
+                            <label for="exampleInputPassword1">Mật khẩu *</label>
                             <input type="password" id="exampleInputPassword1" name="password" required minlength="8">
                             <i class="ti-lock"></i>
                             <div class="text-danger"></div>
@@ -87,19 +88,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
                             <div class="col-6">
                                 <div class="custom-control custom-checkbox mr-sm-2">
                                     <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                    <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
+                                    <label class="custom-control-label" for="customControlAutosizing">Lưu Đăng Nhập</label>
                                 </div>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="./reset-pass.html">Forgot Password?</a>
+                                <a href="./reset-pass.html">Quên Mật Khẩu?</a>
                             </div>
                         </div>
                         <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                            <button id="form_submit" type="submit" style="background-color:rgb(214, 93, 37);color:black">ĐĂNG NHẬP <i class="ti-arrow-right"></i></button>
                         </div>
                         <div class="form-footer text-center mt-5">
-                            <p class="text-muted">Bạn chưa có tài khoản? Đăng kí tại đây<a href="./register.php">Sign up</a></p>
-                            <p class="text-muted"> <a href="/TTT/admin/modules/admins/login.php">Đăng nhập với tư cách admin?</a></p>
+                            <p class="text-muted">Bạn chưa có tài khoản? Đăng kí tại đây<a href="./register.php">ĐĂNG KÍ</a></p>
+                            <p class="text-muted" > <a href="/TTT/admin/modules/admins/login.php" style="color:rgb(214, 93, 37)">Đăng nhập với tư cách admin?</a></p>
                         </div>
                     </div>
                 </form>

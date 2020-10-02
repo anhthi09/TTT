@@ -4,7 +4,7 @@ class DataProvider
 	public static function ExecuteQuery($sql)
 	{
 		try{
-			$connection = mysqli_connect("localhost","root","", "web_noi_that");//or die ("couldn't connect to localhost");				
+			$connection = mysqli_connect("localhost","root","", "web_noi_that-1");//or die ("couldn't connect to localhost");				
 			mysqli_query($connection, "set names 'utf8'");		
 			$result = mysqli_query($connection, $sql);		
 			mysqli_close($connection);		

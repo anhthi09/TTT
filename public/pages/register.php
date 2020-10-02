@@ -44,8 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="login-box ptb--100">
                 <form action="" method="post" enctype="multipart/form-data" id="USadd">
                     <div class="login-form-head">
-                        <h4>Sign up</h4>
-                        <p>Xin chào, mời bạn đăng kí tài khoản</p>
+                        <h4 style="font-size:40px ;color:rgb(214, 93, 37)">Đăng Kí</h4>
+                        <p style="letter-spacing: 2px;">Xin chào, mời bạn đăng kí tài khoản</p>
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="file" class="form-control-file" id="exampleFormControlFile1" name="Hinh" required>
                         </div>
                         <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                            <button id="form_submit" type="submit" style="background-color:rgb(214, 93, 37);color:black">Submit <i class="ti-arrow-right"></i></button>
                             <div class="login-other row mt-4">
                                 <div class="col-6">
                                     <a class="fb-login" href="#">Sign up with <i class="fa fa-facebook"></i></a>

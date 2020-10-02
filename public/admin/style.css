@@ -1108,8 +1108,8 @@ ul.breadcome-menu li a {
 }
 
 .header-advance-area {
-    background: -webkit-linear-gradient(178deg, #043379 0%, #0f4c68 100%);
-    background: linear-gradient(178deg, #043379 0%, #0f4c68 100%);
+    background: -webkit-linear-gradient(178deg, rgb(230, 31, 31) 10%, rgb(150, 51, 6) 90%);
+    background: linear-gradient(178deg, rgb(230, 31, 31)10%, rgb(150, 51, 6) 90%);
 }
 
 .analysis-progrebar-ctn .progress {
@@ -1396,8 +1396,8 @@ ul.two-part-sp li {
 
 .header-top-area {
     position: fixed;
-    background: -webkit-linear-gradient(178deg, #043379 0%, #0f4c68 100%);
-    background: linear-gradient(178deg, #043379 0%, #0f4c68 100%);
+    background: -webkit-linear-gradient(178deg, #d3570f 0%, #e24507 100%);
+    background: linear-gradient(178deg, #d3570f 0%, #e24507 100%);
     z-index: 99;
     left: 200px;
     right: 0;
@@ -1982,7 +1982,7 @@ ul.tab-review-design li.active a {
 }
 
 .hpanel .panel-body {
-    background: #fff;
+    background: rgb(255, 254, 253);
     border-radius: 2px;
     padding: 15px;
     position: relative;
@@ -1992,7 +1992,7 @@ ul.tab-review-design li.active a {
 
 .panel-body {
     padding: 15px;
-    background: #fff;
+    background: rgb(255, 254, 253);
 }
 
 .m-t-xl {

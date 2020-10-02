@@ -14,7 +14,7 @@ if( !isset ($_SESSION['cart']) ){
 <!-- Begin element -->
 <element class="container">
 
-    <h2 class="text-center">Giỏ Hàng Của Bạn</h2>
+    <h2 class="text-center" style="font-family: 'Pacifico', cursive;">Giỏ Hàng Của Bạn</h2>
     <div class="container" style="min-height:544px">
         <table  class="table table-hover table-condensed">
             <thead>

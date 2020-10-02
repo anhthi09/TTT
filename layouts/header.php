@@ -84,13 +84,13 @@ require_once __DIR__ . "/../autoload/autoload.php";
     <div class="sticky">
         <nav>
             <a href="../index.php"><img class="logo"
-                    src="../resources/img/hinh/logo2.png" alt="logo"></a>
+                    src="../resources/img/hinh/logo3.png" alt="logo"></a>
             <div>
             <ul class="main-nav">
               <li>
                 <form class="form-inline " id="reseach" action="show-row.php" method="get">
              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-              <button class="btn btn-primary my-2 my-sm-0" type="submit" name="ok" value="search">Search</button>
+              <button class="btn my-2 my-sm-0" type="submit" name="ok" value="search" style="color: white ;background-color:rgb(214, 93, 37);;border-color:#2e6da4">Search</button>
            </form>
            
           </li>

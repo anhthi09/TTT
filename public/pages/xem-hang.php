@@ -32,7 +32,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                     
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" id="addcart">
-                    <div class="single-product-details res-pro-tb">
+                <div class="single-product-details res-pro-tb">
                         <h1 id="h1"><?php echo $row['name'] ?></h1>
                         <div class="single-pro-price">
                             <span class="single-regular" id="giatien"><?php echo number_format( $row['gia'],0) ?> VNĐ</span>
@@ -45,6 +45,9 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                         <input type="text" value="1" />
                                     </div> -->
                                 </div>
+                            </div >
+                            <div  class="icon-cog blackiconcolor">
+                                <h3> <p><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></span> (37 lượt đánh giá) </p></h3>    
                             </div>
                             <div class="clear"></div>
                             <div class="single-pro-button">
@@ -52,17 +55,18 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                     <a href="addcart.php?id= <?php echo $row['id'] ?>" id="cart">Thêm vào giỏ hàng</a>
                                 </div>
                                 <div class="pro-viwer">
-                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                    <a href="#"><i class="fa fa-thumbs-up"></i></a>
                                     <a href="#"><i class="fa fa-eye"></i></a>
                                 </div>
                             </div>
                             <div class="clear"></div>
                             <div class="single-social-area">
-                                <h3>Chia Sẻ Với:</h3>
-                                <a href="#"><i id="face" class="fa fa-facebook"></i></a>
-                                <a href="#"><i id="gg" class="fa fa-google-plus"></i></a>
-                                <a href="#"><i id="twi"class="fa fa-twitter"></i></a>
-                                <a href="#"><i id="ins" class="fa fa-linkedin"></i></a>
+                                <h2>Share With:</h2>
+                                <a class="button_share share facebook" href="#"><i class="fa fa-facebook"></i> </a>  &ensp;
+                                <a class="button_share share gplus" href="#"><i class="fa fa-google-plus"></i> </a> &ensp;
+                                <a class="button_share share twitter" href="#"><i class="fa fa-twitter"></i> </a> &ensp;
+                                
+                                <a class="button_share share buffer" href="#"><i class="fa fa-share-square-o"></i> </a>
                             </div>
                         </div>
                         
@@ -73,14 +77,13 @@ require_once __DIR__ . "/../../autoload/autoload.php";
     </div>
     <!-- Single pro tab End-->
     <!-- Single pro tab review Start-->
-    <div class="single-pro-review-area mt-t-30 mg-b-15" id="des">
+    <div class="single-pro-review-area mt-t-30 mg-b-15" id="mota1">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <ul id="myTab" class="tab-review-design">
-                        <li class="active"><a href="#description">MÔ TẢ</a></li>
-                        <li><a href="#reviews"><span><i class="fa fa-star"></i><i class="fa fa-star"></i></span>ĐÁNH GIÁ<span><i class="fa fa-star"></i><i class="fa fa-star"></i></span></a></li>
-                        <li><a href="#INFORMATION">THÔNG TIN</a></li>
+                     <ul id="myTab" class="tab-review-design">
+                        <li class="active"><a href="#description"><span><i class="fa fa-handshake-o"></i><i class="fa fa-handshake-o"></i></span>MÔ TẢ<span><i class="fa fa-handshake-o"></i><i class="fa fa-handshake-o"></i></span></a></li>
+                        <li><a href="#reviews"><span><i class="fa fa-handshake-o"></i><i class="fa fa-handshake-o"></i></span>ĐÁNH GIÁ<span><i class="fa fa-handshake-o"></i><i class="fa fa-handshake-o"></i></span></a></li>
                     </ul>
                     <div id="myTabContent" class="tab-content">
                         <div class="product-tab-list product-details-ect tab-pane fade active in" id="description">
@@ -167,29 +170,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="product-tab-list tab-pane fade" id="INFORMATION">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="review-content-section">
-                                        <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                            cupidatat non proident, sunt in culpa qui officia deserunt
-                                            mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error
-                                            sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                            ipsa quae ab illo inventore veritatis et quasi architecto
-                                            beatae vitae dicta sunt explicabo.</p>
-                                        <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco labo nisi ut aliquip ex
-                                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                            velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna
-                                            aliqua. Ut enim ad , quis nostrud exercitation ullamco
-                                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit.</p>
-                                    </div>
+                        
                                 </div>
                             </div>
                         </div>

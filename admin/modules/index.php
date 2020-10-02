@@ -7,7 +7,10 @@
          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="min-height:660px">
 
             <div class="product-status-wrap">
-              <h1>Chào Mừng Bạn Đến Với Trang Quản Lý của Admin<h1>
+              <h1 style="font-family: Quicksand,;
+        color: #4B0082;
+        font-size: xx-large;
+        letter-spacing: 2px;">Chào Mừng Bạn Đến Với Trang Quản Lý của Admin<h1>
             </div>
          </div>
       </div>

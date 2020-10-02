@@ -4,7 +4,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
 ?>
 
 <body >
-    <h2 class="text-center">Đơn hàng của bạn</h2>
+    <h2 class="text-center" style="font-family: 'Pacifico', cursive;">Đơn hàng của bạn</h2>
 
     <div class="container" style="min-height:664px">
         <table class="table table-hover">

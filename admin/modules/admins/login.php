@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
             <div class="col-md-4 col-md-4 col-sm-4 col-xs-12">
                 <div class="text-center m-b-md custom-login">
-                    <h3>Đăng Nhập Quyền Quản Trị Viên</h3>
+                    <h3>Đăng Nhập Quyền Quản Lý </h3>
                     
                 </div>
                 <?php if (isset($_SESSION['error'])):  ?>
@@ -40,18 +40,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
                         <form action="" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label class="control-label" for="username">Email</label>
-                                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="email" id="username" class="form-control">
-                                <span class="help-block small">Tài khoảng email đã đăng kí</span>
+                                <input type="text" placeholder="trannhi17676@gmail.com" title="Please enter you username" required="" value="" name="email" id="username" class="form-control">
+                                <span class="help-block small">Tài khoản email đã đăng kí</span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Password</label>
                                 <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
-                                <span class="help-block small">password của bạn</span>
+                                <span class="help-block small">Password của bạn</span>
                             </div>
                             
                          
-                            <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
-                            <a class="btn btn-default btn-block" href="#">Register</a>
+                            <button type="submit" class="btn btn-success btn-block loginbtn">Đăng Nhập</button>
+                            <a class="btn btn-default btn-block" href="#">Đăng Kí</a>
                         </form>
                     </div>
                 </div>
