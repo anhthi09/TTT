@@ -1,8 +1,8 @@
 <?php
-require_once __DIR__ . "/../../autoload/autoload.php";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    header('location: index.php');
-}
+//require_once __DIR__ . "/../../autoload/autoload.php";
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     header('location: index.php');
+// }
 ?>
 <?php require_once __DIR__ . "/../../layouts/header.php" ?>
 <style>
@@ -22,44 +22,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <form action="" method="post" enctype="multipart/form-data" id="productEdit">
                         <div class="form-group">
                         <?php
-                           try {
-                               $sql = "SELECT * FROM product";
-                               if (isset($_GET['id'])) {
-                                   $id = $_GET['id'];
-                                   $sql .= " WHERE id = " . $id;
-                               }
-                               $result = DataProvider::ExecuteQuery($sql);
-                               $row = mysqli_fetch_array($result);
+                        //    try {
+                        //        $sql = "SELECT * FROM product";
+                        //        if (isset($_GET['id'])) {
+                        //            $id = $_GET['id'];
+                        //            $sql .= " WHERE id = " . $id;
+                        //        }
+                        //        $result = DataProvider::ExecuteQuery($sql);
+                        //        $row = mysqli_fetch_array($result);
                               
-                           } catch (Exception $ex) {
-                               echo "Không thể mở CSDL";
-                           }
+                        //    } catch (Exception $ex) {
+                        //        echo "Không thể mở CSDL";
+                           
                            ?>
                              <label>Danh Mục Sản Phẩm</label>
-                            <select class="form-control form-control-lg" name="loaisp">
+                            <select class="form-control form-control-lg" name="category">
                                 <?php 
-                                $dsLoaiSP = DataProvider::ExecuteQuery( "SELECT id, name FROM category");
-                                while($loai = mysqli_fetch_array($dsLoaiSP)){ ?>
-                                 <option value='<?php echo $loai['id']?>' <?php echo $row['category']==$loai['id'] ? "selected ='selected'" : ' ' ?>> <?php echo $loai['name'] ?> </option> ;
-                                <?php }?>
+                                // $dsLoaiSP = DataProvider::ExecuteQuery( "SELECT id, name FROM category");
+                                // while($loai = mysqli_fetch_array($dsLoaiSP)){ ?>
+                                //  <option value='<?php echo $loai['id']?>' <?php echo $row['category']==$loai['id'] ? "selected ='selected'" : ' ' ?>> <?php echo $loai['name'] ?> </option> ;
+                                // <?php ?>
                                 
                             </select>
                             <div class="form-group">
                             <label>Loại Sản Phẩm</label>
                             <select class="form-control form-control-lg" name="type">
-                                <?php 
-                                $dsLoai= DataProvider::ExecuteQuery( "SELECT * FROM `type`");
-                                while($loaisp = mysqli_fetch_array($dsLoai)){ ?>
-                                <option value='  <?php echo $loaisp['id']?>'  <?php echo $row['type']==$loaisp['id'] ? "selected ='selected'" : ' ' ?>> <?php echo $loaisp['name'] ?> </option>  ;
-                               <?php }
-                                ?>
+                                
+                               <!-- // $dsLoai= DataProvider::ExecuteQuery( "SELECT * FROM `type`");
+                                //while($loaisp = mysqli_fetch_array($dsLoai)){ ?> -->
+                                
+                             
                             </select>
                             
                         </div>
                         </div>
                         <div class="form-group">
                             <label>Tên Sản Phẩm</label>
-                            <input type="text" class="form-control" placeholder="Enter name" name="TenSP" <?php echo "value='{$row['name']}'"?>>
+                            <input type="text" class="form-control" placeholder="Enter name" name="name" <?php echo "value='{$row['name']}'"?>>
                         </div>
                         <div class="form-group">
                             <label>Số Lượng</label>
@@ -67,25 +66,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="form-group">
                             <label>Giá</label>
-                            <input type="number" class="form-control" placeholder="9 000 000" name="Gia"<?php echo "value='{$row['gia']}'"?>>
+                            <input type="number" class="form-control" placeholder="9 000 000" name="gia"<?php echo "value='{$row['gia']}'"?>>
                         </div>
                         
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Ảnh</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="Hinh" ?>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="hinh" ?>
                             <img src="img_product/<?php echo $row['avatar'] ?>">
 
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Mô Tả Sản Phẩm</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="noidung"><?php echo "{$row['content']}"?></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="content"><?php echo "{$row['content']}"?></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" data-id_sua=<?php echo $row['id'] ?> class="btn btn-primary submit">Submit</button>
 
                 <!-- End form add product -->
                     </form>
 
                     <script>
+                    $(document).on('click', '.submit', function() {
+                     var id = $(this).data('id_sua');
+                     console.log(id);
+                     const name = document.querySelector('[name="name"]').value;
+                                const soluong = document.querySelector('[name="soluong"]').value;
+                                const gia = document.querySelector('[name="gia"]').value;
+                                const category = document.querySelector('[name="category"]').value;
+                                const type = document.querySelector('[name="type"]').value;
+                                const content = document.querySelector('[name="content"]').value;
+                                const requestObj = {
+                                    id=id,
+                                    name: name,
+                                    soluong: soluong,
+                                    gia: gia,
+                                    category: category,
+                                    type: type,
+                                    content: content
+                                };
+                                
+                     $.ajax({
+                        url: 'http://localhost:8080/api/api/product/updata.php',
+                        method: "POST",
+                        data: JSON.stringify(requestObj),
+                        crossDomain: true,
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        success: function(data) {
+                           alert('Sửa dữ liệu thành công');
+                           window.location = 'http://localhost:8080/TTT/admin/modules/product/index.php';
+                           // fetch_data();
+                        }
+                     })
+                  })
                         $(function () {
                         $("#productEdit").validate({
                             rules: {
@@ -116,18 +148,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </div>
 <?php
-if (isset($_REQUEST['TenSP'])) {
+// if (isset($_REQUEST['TenSP'])) {
     
-    $sql = " UPDATE `product` SET `name` = '{$_REQUEST['TenSP']}', `soluong` = '{$_REQUEST['soluong']}', `gia` = '{$_REQUEST['Gia']}', `category` = '{$_REQUEST['loaisp']}', `type` = '{$_REQUEST['type']}', `content` = '{$_REQUEST['noidung']}' WHERE `product`.`id` =  $id";
+//     $sql = " UPDATE `product` SET `name` = '{$_REQUEST['TenSP']}', `soluong` = '{$_REQUEST['soluong']}', `gia` = '{$_REQUEST['Gia']}', `category` = '{$_REQUEST['loaisp']}', `type` = '{$_REQUEST['type']}', `content` = '{$_REQUEST['noidung']}' WHERE `product`.`id` =  $id";
    
    
-    DataProvider::ExecuteQuery($sql);
-    if (@$_FILES['Hinh']['error'] == 0) {
-        move_uploaded_file(@$_FILES['Hinh']["tmp_name"], "img_product/". @$_FILES['Hinh']["name"]);
-        $sql = "UPDATE `product` SET  `avatar` = '{$_FILES['Hinh']['name']}'  WHERE `product`.`id` = $id";
+//     DataProvider::ExecuteQuery($sql);
+//     if (@$_FILES['Hinh']['error'] == 0) {
+//         move_uploaded_file(@$_FILES['Hinh']["tmp_name"], "img_product/". @$_FILES['Hinh']["name"]);
+//         $sql = "UPDATE `product` SET  `avatar` = '{$_FILES['Hinh']['name']}'  WHERE `product`.`id` = $id";
      
-        echo $sql;
-        DataProvider::ExecuteQuery($sql);
-    }
-}
+//         echo $sql;
+//         DataProvider::ExecuteQuery($sql);
+//     }
+// }
 require_once __DIR__ . "/../../layouts/footer.php" ?>

@@ -1108,8 +1108,8 @@ ul.breadcome-menu li a {
 }
 
 .header-advance-area {
-    background: -webkit-linear-gradient(178deg, rgb(230, 31, 31) 10%, rgb(150, 51, 6) 90%);
-    background: linear-gradient(178deg, rgb(230, 31, 31)10%, rgb(150, 51, 6) 90%);
+    background: -webkit-linear-gradient(178deg, rgb(184, 65, 10) 10%, rgb(150, 51, 6) 90%);
+    background: linear-gradient(178deg, rgb(184, 65, 10) 10%, rgb(150, 51, 6) 90%);
 }
 
 .analysis-progrebar-ctn .progress {

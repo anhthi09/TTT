@@ -11,7 +11,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="product-status-wrap">
-                    <h2 class="text-center"> Thông Tin Của Bạn </h2>
+                    <h2 class="text-center" style="font-family: 'Pacifico', cursive" > Thông Tin Của Bạn </h2>
                     <form action="" method="post" enctype="multipart/form-data" id="USedit">
                         <?php
                         try {

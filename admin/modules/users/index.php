@@ -1,7 +1,7 @@
 <?php session_start ()?>
 <?php require_once __DIR__ . "/../../autoload/autoload.php"; ?>
 <?php require_once __DIR__ . "/../../layouts/header.php" ?>
-<?php 
+<!-- <?php 
 
 if( !isset ($_SESSION['namead']) ){
    echo "<script> alert ('Bạn phải là admin để sử dụng chức năng này. Hãy đăng nhập để tiếp tục nhé'); 
@@ -14,7 +14,7 @@ if( isset($_GET["trang"]) ){
 }else{
 	$trang = 1;	
 }
-?>
+?> -->
 <div class="product-status mg-tb-15">
    <div class="container-fluid">
       <div class="row">
@@ -37,7 +37,7 @@ if( isset($_GET["trang"]) ){
                      .then(data => {
                         document.querySelector('table').innerHTML = '';
                         var content = ` <tr>
-                     <th>STT</th>                 
+                     <th>Mã Người Dùng</th>                 
                      <th>Ảnh Đại Diện</th>
                      <th>Tên Người Dùng</th>
                      <th>Địa Chỉ</th>
@@ -53,7 +53,7 @@ if( isset($_GET["trang"]) ){
                            content += `
                         <tr id="row-${element.id}">
                                          <td> ${element.id}</td>            
-                                         <td><img src="img_users/${element.avatar}" ></img></td>                           
+                                         <td><img src="http://localhost:8080/api/api/assets/avt/${element.avatar}" ></img></td>                           
                                          <td> ${element.name}</td>
                                          <td> ${element.address}</td>
                                          <td> ${element.email}</td>
@@ -68,6 +68,7 @@ if( isset($_GET["trang"]) ){
                                          </td>
                                      </tr>`;
                         });
+                        console.log(data);
                         document.querySelector('table').innerHTML = content;
 
                      });

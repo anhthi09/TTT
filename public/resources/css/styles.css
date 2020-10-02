@@ -191,9 +191,9 @@ ul.main-nav > li > a{
     }
     
     .sticky .logo {
-        width: 350px;
-        margin-top: -10px;
-        padding-bottom: -80px;
+        width: 300px;
+        margin-top: -5px;
+        padding-bottom: -20px;
     }
     
     .sticky .main-nav {

@@ -1,23 +1,23 @@
 <?php session_start ()?>
-<?php require_once __DIR__ . "/../../autoload/autoload.php"; ?>
+<?php // require_once __DIR__ . "/../../autoload/autoload.php"; ?>
 <?php require_once __DIR__ . "/../../layouts/header.php" ?>
 <?php 
 
-if( !isset ($_SESSION['namead']) ){
-   echo "<script> alert ('Bạn phải là admin để sử dụng chức năng này. Hãy đăng nhập để tiếp tục nhé'); 
-   location.href='/TTT/admin/modules/'</script> ";
-}
+// if( !isset ($_SESSION['namead']) ){
+//    echo "<script> alert ('Bạn phải là admin để sử dụng chức năng này. Hãy đăng nhập để tiếp tục nhé'); 
+//    location.href='/TTT/admin/modules/'</script> ";
+// }
 
-$sotin1trang = 10; 
+// $sotin1trang = 10; 
 
 
 
-if( isset($_GET["trang"]) ){
-	$trang = $_GET["trang"];
-	settype($trang, "int");
-}else{
-	$trang = 1;	
-}
+// if( isset($_GET["trang"]) ){
+// 	$trang = $_GET["trang"];
+// 	settype($trang, "int");
+// }else{
+// 	$trang = 1;	
+// }
 ?>
 <div class="product-status mg-tb-15">
    <div class="container-fluid">
@@ -42,7 +42,7 @@ if( isset($_GET["trang"]) ){
                      .then(data => {
                         document.querySelector('table').innerHTML = '';
                         var content = ` <tr>
-                     <th>STT</th>                 
+                     <th>Mã Loại SP</th>                 
                      <th>Danh mục</th>
                      <th>Loại Sản Phẩm</th>
                     
@@ -88,29 +88,27 @@ if( isset($_GET["trang"]) ){
                   })
                </script>
 
-                   
-
                <div id="phantrangtype">
              <?php
-             $x = "SELECT id FROM `type`";
-             $kq = DataProvider::ExecuteQuery($x);
-             $tongsotin = mysqli_num_rows($kq);
-             $sotrang = ceil($tongsotin / $sotin1trang);
+            //  $x = "SELECT id FROM `type`";
+            //  $kq = DataProvider::ExecuteQuery($x);
+            //  $tongsotin = mysqli_num_rows($kq);
+            //  $sotrang = ceil($tongsotin / $sotin1trang);
 
-               if ($trang > 1 && $sotrang > 1){
-               echo '<a href="index.php?trang='.($trang-1).'"> Prev</a> | ';
-               }
-               for ($i = 1; $i <= $sotrang; $i++){
-               if ($i == $trang){
-               echo '<span>'.$i.'</span> | ';
-               }
-               else{
-               echo '<a href="index.php?trang='.$i.'">'.$i.'</a> | ';
-               }
-               }
-               if ($trang < $sotrang && $sotrang > 1){
-               echo '<a href="index.php?trang='.($trang+1).'">Next</a>  ';
-               }
+            //    if ($trang > 1 && $sotrang > 1){
+            //    echo '<a href="index.php?trang='.($trang-1).'"> Prev</a> | ';
+            //    }
+            //    for ($i = 1; $i <= $sotrang; $i++){
+            //    if ($i == $trang){
+            //    echo '<span>'.$i.'</span> | ';
+            //    }
+            //    else{
+            //    echo '<a href="index.php?trang='.$i.'">'.$i.'</a> | ';
+            //    }
+            //    }
+            //    if ($trang < $sotrang && $sotrang > 1){
+            //    echo '<a href="index.php?trang='.($trang+1).'">Next</a>  ';
+            //    }
           ?>
 </div>
 <style>

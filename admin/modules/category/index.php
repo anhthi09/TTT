@@ -1,7 +1,7 @@
 <?php session_start ()?>
 <?php require_once __DIR__ . "/../../autoload/autoload.php"; ?>
 <?php require_once __DIR__ . "/../../layouts/header.php" ?>
-<?php 
+<!-- <?php 
 
 if( !isset ($_SESSION['namead']) ){
    echo "<script> alert ('Bạn phải là admin để sử dụng chức năng này. Hãy đăng nhập để tiếp tục nhé'); 
@@ -18,7 +18,7 @@ if( isset($_GET["trang"]) ){
 }else{
 	$trang = 1;	
 }
-?>
+?> -->
 <div class="product-status mg-tb-15">
    <div class="container-fluid">
       <div class="row">
@@ -42,7 +42,7 @@ if( isset($_GET["trang"]) ){
                      .then(data => {
                         document.querySelector('table').innerHTML = '';
                         var content = ` <tr>
-                     <th>STT</th>                 
+                     <th>Mã danh mục</th>                 
                      <th>Tên Danh mục</th>
                      <th>Ngày thêm</th>
                      <th>Ngày Sửa</th>

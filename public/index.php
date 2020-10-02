@@ -105,8 +105,8 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
             Những nghiên cứu kỹ lưỡng đó được kết hợp khéo léo cùng tài năng của các nhà thiết kế nổi tiếng Châu Âu, tạo nên dòng sản phẩm trang trí, đồ nội thất đẹp có độ ứng dụng cao với nhiều loại hình không gian khác nhau. 
             <br>Gần gũi và ấm cúng cho nhà ở; cởi mở và thời trang cho khách sạn; chuyên nghiệp, năng động khi sử dụng cho văn phòng... 
             phong thái từ các thiết kế của Venus Furniture luôn tạo được sức hút bởi tính đa chiều trong cảm xúc mà chúng mang lại cho không gian.
-            Venus Furniture luôn sẵn sàng mang đến những sản phẩm đồ nội thất đẹp giúp bạn tạo ra những không gian sống tiện nghi, 
-            thoải mái .
+            <br>Venus Furniture luôn sẵn sàng mang đến những sản phẩm đồ nội thất đẹp giúp bạn tạo ra những không gian sống tiện nghi, 
+            thoải mái . 
             </p>
            
         </div>
@@ -195,7 +195,7 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
                     <img class ="anh" id="hinh4" src="./resources/img/hinh/duan.jpg">
                 
                 <h4 class="tieude3" style="text-align:center">QUÁ TRÌNH</h4>
-                <p p class="gioithieu ">Hệ thống của Fleetwood và đội ngũ nhân viên giàu kinh nghiệm mang đến cho 
+                <p p class="gioithieu ">Hệ thống của Venus và đội ngũ nhân viên giàu kinh nghiệm mang đến cho 
                     khách hàng sự đảm bảo rằng các dự án của họ sẽ được xử lý liền mạch và chuyên nghiệp, 
                     hoàn thành các mục tiêu thiết kế của họ.</p>
                     

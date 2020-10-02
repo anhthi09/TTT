@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../../autoload/autoload.php";
+//require_once __DIR__ . "/../../autoload/autoload.php";
 
 ?>
 <?php require_once __DIR__ . "/../../layouts/header.php" ?>
@@ -76,11 +76,11 @@ require_once __DIR__ . "/../../autoload/autoload.php";
 
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Ảnh</label>
-                                <input type="file" class="form-control-file"  name="avatar" id="avatar">
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="avatar" id="avatar">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Mô Tả Sản Phẩm</label>
-                                <textarea class="form-control"  rows="5" name="content" id="content"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="content" id="content"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 
@@ -93,17 +93,17 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                 const name = document.querySelector('[name="name"]').value;
                                 const soluong = document.querySelector('[name="soluong"]').value;
                                 const gia = document.querySelector('[name="gia"]').value;
+                                const avatar = document.querySelector('[name="avatar"]').value;
                                 const category = document.querySelector('[name="category"]').value;
                                 const type = document.querySelector('[name="type"]').value;
-                                const avatar = document.querySelector('[name="avatar"]').value;
                                 const content = document.querySelector('[name="content"]').value;
                                 const requestObj = {
                                     name: name,
                                     soluong: soluong,
                                     gia: gia,
-                                    category: category,
                                     type: type,
-                                    avatar: avatar,
+                                    category: category,
+                                    avatar:avatar,
                                     content: content
                                 };
                                 $.ajax({
@@ -114,7 +114,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                     contentType: 'application/json; charset=utf-8',
                                     dataType: 'json',
                                     success: function(data) {
-                                        if (data == "no_errors") window.location.href = 'TTT/admin/modules/product/index.php';
+                                        if (data == "no_errors") window.location.href = 'http://localhost:8080/TTT/admin/modules/product/index.php';
                                     }
                                 })
                             }
@@ -135,9 +135,9 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                             digits: true,
                                             min: 1
                                         },
-                                        avatar: {
-                                            required: true
-                                        },
+                                        // avatar: {
+                                        //     required: true
+                                        // },
                                         content: {
                                             required: true
                                         }
@@ -157,9 +157,9 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                                             min: "Vui lòng nhập giá lớn hơn 0",
                                             digits: "Vui lòng nhập số nguyên"
                                         },
-                                        avatar: {
-                                            required: "Vui lòng chọn ảnh"
-                                        },
+                                        // avatar: {
+                                        //     required: "Vui lòng chọn ảnh"
+                                        // },
                                         content: {
                                             required: "Vui lòng nhập mô tả"
                                         }
