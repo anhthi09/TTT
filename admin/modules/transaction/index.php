@@ -24,7 +24,9 @@
                         var content = ` <tr>
                                      
                      <th>Mã Đơn Hàng</th>
-                     <th>Tên Khách Hàng</th>
+                     <th>Mã Khách Hàng</th>
+                   
+
                      <th>Tổng Tiền</th>
                      <th>Nội Dung</th>
                      <th>Ngày Đặt</th>

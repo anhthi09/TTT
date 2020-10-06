@@ -27,7 +27,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                         }
                         ?>
                         <div class="form-group">
-                            <label>Tên User</label>
+                            <label>Tên Khách Hàng</label>
                             <input type="text" class="form-control" placeholder="Enter name" name="TenUS" value="<?php echo $row['name'] ?>" required minlength="3">
                         </div>
                         <div class="form-group">

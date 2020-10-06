@@ -31,8 +31,8 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
     <header id="Home">
         <!-- Begin head  -->
         <nav>
-        <a href="#Home"><img class="logo" src="./resources/img/hinh/logo3.png" alt="logo"></a>
-            <div>
+         <a href="#Home"><img class="logo" src="./resources/img/hinh/logo3.png" alt="logo"></a>
+            <!--<div>
             <ul class="main-nav" >
                 <li id="danhmuc"></li>
                 <script>
@@ -57,7 +57,34 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
                     // console.log(id);
                    
                              
-        </script>
+        </script> -->
+        <div>
+                <ul class="main-nav">
+                    <?php
+                    $sql = "SELECT * FROM `category`";
+                    $category = DataProvider::ExecuteQuery($sql);
+                    while ($loai = mysqli_fetch_array($category)) {
+
+                        $chuoi = <<< EOD
+                          <li><a class="a" href="#">  {$loai['name']}</a>
+                          <ul class="submenu">
+                          EOD;
+                        echo $chuoi;
+
+                        $sql1 = "SELECT * FROM `type` WHERE `category` = {$loai['id']}";
+                        $type = DataProvider::ExecuteQuery("$sql1");
+
+                        while ($type1 = mysqli_fetch_array($type)) {
+                            $chuoi1 = <<< EOD
+                      
+                            <li><a href="/TTT/public/pages/show-row.php?id={$type1['id']}"> {$type1['name']}</a></li>                                                                                  
+                     EOD;
+                            echo $chuoi1;
+                        }
+                        echo " </ul>";
+                    }
+                    echo   "</li>";
+                    ?>
                   
                     <a class="fas fa-shopping-cart " href="pages/gio-hang.php" id="icoi"></a>
                    <?php if (isset($_SESSION['name'])) :   ?>
@@ -126,18 +153,22 @@ require_once __DIR__ . "/../autoload/autoload.php"; ?>
     <section class="products-section container-fluid" >
     <div class="row colum" >
             <div class="col span_1_of_4 about-picture">
+                <a href="pages/show-row.php?id=11">
                 <img src="./resources/img/hinh/sofa1.jpeg" alt="activities1">
-                <p class="picture-title">Sofa</p>
+                <p class="picture-title" >Sofa</p>
             </div>
             <div class="col span_1_of_4 about-picture">
+                <a href="pages/show-row.php?id=56">
                 <img src="./resources/img/hinh/ghe1.jpeg" alt="activities2">
                 <p class="picture-title">Ghế</p>
             </div>
             <div class="col span_1_of_4 about-picture">
+            <a href="pages/show-row.php?id=13">
                 <img src="./resources/img/hinh/ban1.jpeg" alt="activities3">
                 <p class="picture-title">Bàn</p>
             </div>
             <div class="col span_1_of_4 about-picture">
+            <a href="pages/show-row.php?id=21">
                 <img src="./resources/img/hinh/giuong1.jpeg" alt="activities4">
                 <p class="picture-title">Giường</p>
             </div>

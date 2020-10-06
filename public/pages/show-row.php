@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/../../layouts/header.php";
-require_once __DIR__ . "/../../autoload/autoload.php";
+
 ?>
 <!-- Begin element -->
 <!DOCTYPE html>
@@ -79,7 +79,8 @@ require_once __DIR__ . "/../../autoload/autoload.php";
         <script>
             const urlParams = new URLSearchParams(window.location.search);
             const id = urlParams.get('id');
-            var requestUrl = 'http://localhost:8080/api/api/product/read_category.php/?category=' + id;
+            console.log(id);
+            var requestUrl = 'http://localhost:8080/api/api/product/read_type.php/?type=' + id;
             fetch(requestUrl, {
                     method: "get",
                     data: id
@@ -92,13 +93,13 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                         content += `
                 <div class="khung_san_pham col-4">
                                   <div class="Hinh_anhsp">
-                                      <a href=" xem-hang.php?id= ${element.id}"><img src="/TTT/admin/modules/product/img_product/${element.avatar}"  alt="poto"></a>
+                                      <a href=" xem-hang.php?id=${element.id}"><img src="/TTT/admin/modules/product/img_product/${element.avatar}"  alt="poto"></a>
                                   </div>
                                   <div class="ten_sp">
                                       <p> ${element.name}</p>
                                   </div>
                                   <div class="gia_sp">
-                                  <p>   ${element.gia} </p>
+                                  <p>   ${element.gia} VNĐ </p>
                                   </div>
                                   <div class="pro-viwer" id="traitim">
                                     <a href="#"><i class="fa fa-heart"></i></a>

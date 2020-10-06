@@ -53,7 +53,7 @@ if( isset($_GET["trang"]) ){
                            content += `
                         <tr id="row-${element.id}">
                                          <td> ${element.id}</td>            
-                                         <td><img src="img_admins/${element.avatar}" ></img></td>                           
+                                         <td><img src="img_users/${element.avatar}" ></img></td>                           
                                          <td> ${element.name}</td>
                                          <td> ${element.address}</td>
                                          <td> ${element.email}</td>

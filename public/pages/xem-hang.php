@@ -1,31 +1,35 @@
 <?php
 require_once __DIR__ . "/../../layouts/header.php";
-require_once __DIR__ . "/../../autoload/autoload.php";
+
 ?>
 
     <div class="single-product-tab-area mg-t-15 mg-b-30" id="all" style="min-height:550px">
         <div class="container-fluid">
-            <div class="row">
-            <?php
-                           try {
-                               $sql = "SELECT * FROM product";
-                               if (isset($_GET['id'])) {
-                                   $id = $_GET['id'];
-                                   $sql .= " WHERE id = " . $id;
-                               }
-                               $result = DataProvider::ExecuteQuery($sql);
-                               $row = mysqli_fetch_array($result);
-                              
-                           } catch (Exception $ex) {
-                               echo "Không thể mở CSDL";
-                           }
-                           ?>
+               <div class="row" id="xemsp">
+                
+                </div>
 
+            </div>
+    </div>
 
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" id="img">
+    <script>
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const id = urlParams.get('id');
+                    var requestUrl = 'http://d39e63958afa.ngrok.io/api/api/product/read_one.php?id=' + id;
+                     console.log(id);
+                    fetch(requestUrl, {
+                            method: "get",
+                            data: id
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById("xemsp").innerHTML = '';
+                            var content = ``;
+                            data.data.records.forEach(element => {
+                                content += `<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" id="img">
                     <div id="myTabContent1" class="tab-content">
                         <div class="product-tab-list tab-pane fade active in" id="single-tab1">
-                            <img src="/TTT/admin/modules/product/img_product/<?php echo $row['avatar']?>" alt="" />
+                            <img src="/TTT/admin/modules/product/img_product/${element.avatar}" alt="" />
                         </div>
                         
                     </div>
@@ -33,17 +37,13 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" id="addcart">
                 <div class="single-product-details res-pro-tb">
-                        <h1 id="h1"><?php echo $row['name'] ?></h1>
+                        <h1 id="h1">${element.name}</h1>
                         <div class="single-pro-price">
-                            <span class="single-regular" id="giatien"><?php echo number_format( $row['gia'],0) ?> VNĐ</span>
+                            <span class="single-regular" id="giatien">${element.gia} VNĐ</span>
                         </div>
                         <div class="color-quality-pro">
                             <div class="color-quality">
-                                <!-- <h4 id="quantity">Số lượng</h4>
-                                <div class="quantity">
-                                    <div class="pro-quantity-changer">
-                                        <input type="text" value="1" />
-                                    </div> -->
+                               
                                 </div>
                             </div >
                             <div  class="icon-cog blackiconcolor">
@@ -52,7 +52,7 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                             <div class="clear"></div>
                             <div class="single-pro-button">
                                 <div class="pro-button">
-                                    <a href="addcart.php?id= <?php echo $row['id'] ?>" id="cart">Thêm vào giỏ hàng</a>
+                                    <a href="addcart.php?id= ${element.id}" id="cart">Thêm vào giỏ hàng</a>
                                 </div>
                                 <div class="pro-viwer">
                                     <a href="#"><i class="fa fa-thumbs-up"></i></a>
@@ -71,10 +71,15 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                         </div>
                         
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                        `;
+                            });
+                            
+                            document.getElementById("xemsp").innerHTML = content;
+                        });
+                </script>
+
+
+    
     <!-- Single pro tab End-->
     <!-- Single pro tab review Start-->
     <div class="single-pro-review-area mt-t-30 mg-b-15" id="mota1">
@@ -87,17 +92,10 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                     </ul>
                     <div id="myTabContent" class="tab-content">
                         <div class="product-tab-list product-details-ect tab-pane fade active in" id="description">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="review-content-section">
-                                        <p class="thongtinsp">
-
-                                        <?php echo $row['content'] ?>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
+
+
                         <div class="product-tab-list tab-pane fade" id="reviews">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -176,7 +174,35 @@ require_once __DIR__ . "/../../autoload/autoload.php";
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                <script>
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const id = urlParams.get('id');
+                    var requestUrl = 'http://d39e63958afa.ngrok.io/api/api/product/read_one.php?id=' + id;
+                     console.log(id);
+                    fetch(requestUrl, {
+                            method: "get",
+                            data: id
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById("description").innerHTML = '';
+                            var content = ``;
+                            data.data.records.forEach(element => {
+                                content +=`<div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="review-content-section">
+                                        <p class="thongtinsp" >
+                                        ${element.content}
+                                       
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>`;
+                            });
+                            
+                            document.getElementById("description").innerHTML = content;
+                        });
+                </script>
+        
 <?php require_once __DIR__ . "/../../layouts/footer.php" ?>

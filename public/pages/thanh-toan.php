@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tongtien= $_SESSION['tongtien'];
     $idHD=$_SESSION['id'];
     $note=$_POST['note'];
-    $sql = "INSERT INTO `transaction` (`id`, `amount`, `user_id`, `status`, `note`, `created_at`, `created_up`) 
+    $sql = "INSERT INTO `transaction` (`id`, `amount`, `user_id`, `status`, `note`, `created_at`, `updated_at`) 
             VALUES (NULL, '$tongtien', '$idHD', '0', '$note', current_timestamp(), current_timestamp())";
     DataProvider::ExecuteQuery($sql);
 
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ptoduct_id= $key;
         $soluong= $value['soluong'];
         $gia=$value['gia'];
-        $sql = "INSERT INTO `orders` (`id`, `transaction_id`, `product_id`, `soluong`, `gia`,`created_at`) 
+        $sql = "INSERT INTO `orders` (`id`, `transaction_id`, `product_id`, `soluong`, `gia`,`updated_at`) 
         VALUES (NULL, '$transaction_id', '$ptoduct_id', '$soluong', '$gia', '$sale', current_timestamp())";
        
         DataProvider::ExecuteQuery($sql);
